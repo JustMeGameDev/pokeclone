@@ -8,7 +8,9 @@ public class Encounter : MonoBehaviour
 	public string area;
 	public bool encounter;
 	public float timer;
+	public float maxtimer = 10f;
 	private bool done;
+	public int chance = 1;
  
 	
 	private void OnTriggerExit()
@@ -19,6 +21,7 @@ public class Encounter : MonoBehaviour
 		encounter = false;
 		print("safe");
 		area = "";
+		done = true;
 			
 		
 	}
@@ -27,14 +30,14 @@ public class Encounter : MonoBehaviour
 	{
 		
 		
-		if(Zone.tag == "Encounter")
+		if(Zone.CompareTag("Encounter"))
 		{
 			encounter = true;
 			area = "Encounter";
 			print("spawn chance");
 		}
 		
-		else if (Zone.tag == "Encounter test")
+		else if (Zone.CompareTag("Encounter test"))
 		{
 			encounter = true;
 			area = "Encounter test";
@@ -45,14 +48,22 @@ public class Encounter : MonoBehaviour
 
 	private void OnTriggerStay(Collider Zone)
 	{
-		if (Zone.tag == "Encounter" && done)
+		if (Zone.CompareTag("Encounter") && done)
 		{
-			Timer();
+			if (chance > Random.Range(0, 26))
+            {
+				print("gothja");
+				SceneManager.LoadScene("encounter");
+            }
+			else
+            {
+				Timer();
+            }
 		}
 
-		else if (Zone.tag == "Encounter test")
+		else if (Zone.CompareTag("Encounter test"))
 		{
-			
+			SceneManager.LoadScene("encounter");
 		}
 	}
 	
@@ -60,8 +71,35 @@ public class Encounter : MonoBehaviour
     {
 		
 		done = false;
-		for (float i = 10f; i < 20; i = +.1f) ;
-
+		timer = maxtimer;
     }
+
+
+
 	
+	
+
+	void Update()
+	{
+		
+		if (!done)
+		{
+			if (timer > 0)
+			{
+				timer -= Time.deltaTime;
+			}
+			else
+			{
+				print("done");
+				timer = 0;
+				chance++;
+				done = true;
+			}
+		}
+	}
+
+	
+
 }
+	
+
