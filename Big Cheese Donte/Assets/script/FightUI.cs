@@ -7,6 +7,7 @@ using TMPro;
 
 
 
+
 public class FightUI : MonoBehaviour
 {
     public GameObject Main;
@@ -33,23 +34,77 @@ public class FightUI : MonoBehaviour
     public bool BG3 = false;
     public Sprite BGI3;
 
+    public float Health;
+    public float MaxHealth;
+
+    //range of damage. (I chance this later voor each weapon)
+    public int minDmg = 1;
+    public int maxDmg = 10;
+
+    public GameObject HealthBar;
+    public Slider Slider;
+
+    public TextMeshProUGUI healthText;
+
 
     private void awake()
     {
-        if (BG1 == true)
-        {
+        //if (BG1 == true)
+        //{
            
-        }
-        else if (BG2 == true)
-        {
+        //}
+        //else if (BG2 == true)
+        //{
            
-        }
-        else if (BG3 == true)
-        {
+        //}
+        //else if (BG3 == true)
+        //{
            
-        }
+        //}
+
 
     }
+
+    public void Damage(int amount)
+    {
+        Health -= Random.Range(minDmg, maxDmg);
+
+        Health -= amount;
+       
+    }
+    public void Start()
+    {
+
+
+        Health = MaxHealth;
+        Slider.value = CalculateHealth();
+        //scoreText.text = "Points: " + 1;
+    }
+
+
+    public void Update()
+    {
+        Slider.value = CalculateHealth();
+
+        if (Health <= 0 )
+        {
+
+       
+            //hier moet wat gebeuren als de enemy of de player 0 is
+           
+
+        }
+
+        healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
+
+
+    }
+
+    float CalculateHealth()
+    {//als de max health 100 is en health 10 veranderd de healthbar
+        return Health / MaxHealth;
+    }
+
 
 
     public void FightMenu()
@@ -57,6 +112,8 @@ public class FightUI : MonoBehaviour
         Main.SetActive(false);
         Fight.SetActive(true);
         LinkerFightText.text = FightQuip[Random.Range(0, FightQuip.Count)]; // dit zorgt ervoor dat je een random quip krijgt als je op fight klikt
+
+
     }
     public void ItemMenu()
     {
