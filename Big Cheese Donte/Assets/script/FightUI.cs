@@ -34,18 +34,23 @@ public class FightUI : MonoBehaviour
     public bool BG3 = false;
     public Sprite BGI3;
 
-    public float Health;
-    public float MaxHealth;
-
-    //range of damage. (I chance this later voor each weapon)
+    //Damage
     public int minDmg = 1;
     public int maxDmg = 10;
-
+  
+    //playerHealth
+    public float Health;
+    public float MaxHealth;
     public GameObject HealthBar;
     public Slider Slider;
-
     public TextMeshProUGUI healthText;
 
+    //EnemyHealth
+    public GameObject EnemyHealthBar;
+    public Slider EnemySlider;
+    public TextMeshProUGUI EnemyHealthText;
+    public float EnemyHealth;
+    public float EnemyMaxHealth;
 
     private void awake()
     {
@@ -66,19 +71,27 @@ public class FightUI : MonoBehaviour
     }
 
     public void Damage(int amount)
-    {
+    {   //player Damage
         Health -= Random.Range(minDmg, maxDmg);
 
         Health -= amount;
        
+        // Enemy Damage
+        EnemyHealth -= Random.Range(minDmg, maxDmg);
+
+        EnemyHealth -= amount;
+
     }
     public void Start()
     {
-
+        EnemyHealth = EnemyMaxHealth;  
+        EnemySlider.value = CalculateEnemyHealth();
 
         Health = MaxHealth;
         Slider.value = CalculateHealth();
-        //scoreText.text = "Points: " + 1;
+
+      
+        
     }
 
 
@@ -86,7 +99,9 @@ public class FightUI : MonoBehaviour
     {
         Slider.value = CalculateHealth();
 
-        if (Health <= 0 )
+        EnemySlider.value = CalculateEnemyHealth();
+
+        if (Health <= 0 || EnemyHealth <= 0)
         {
 
        
@@ -94,17 +109,23 @@ public class FightUI : MonoBehaviour
            
 
         }
+       
 
         healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
-
+       
+        EnemyHealthText.text = EnemyHealth.ToString() + " / " + EnemyMaxHealth.ToString();
 
     }
 
     float CalculateHealth()
     {//als de max health 100 is en health 10 veranderd de healthbar
-        return Health / MaxHealth;
+        return Health / MaxHealth;    
     }
 
+    float CalculateEnemyHealth()
+    {
+       return EnemyHealth / EnemyMaxHealth;
+    }
 
 
     public void FightMenu()
