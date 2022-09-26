@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
+    [Header("Varibles")]
     public Volume m_Volume;
     public bool transition;
     public bool detransition;
