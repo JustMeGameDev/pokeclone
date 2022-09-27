@@ -96,7 +96,6 @@ Transform:
   m_Children:
   - {fileID: 256206254}
   - {fileID: 8186163672818007724}
-  - {fileID: 1434316987372655281}
   - {fileID: 5655577753302034756}
   m_Father: {fileID: 5655577754550103174}
   m_RootOrder: 4
@@ -310,7 +309,7 @@ RectTransform:
   m_Children:
   - {fileID: 5655577754623362407}
   m_Father: {fileID: 1629604107}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -776,7 +775,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1629604107}
+    m_TransformParent: {fileID: 8186163672818007724}
     m_Modifications:
     - target: {fileID: 1586473235704095740, guid: d6249d273612dea4cb6b37d388fbe5a4,
         type: 3}
@@ -796,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 1586473235704095743, guid: d6249d273612dea4cb6b37d388fbe5a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1586473235704095743, guid: d6249d273612dea4cb6b37d388fbe5a4,
         type: 3}
@@ -920,12 +919,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6249d273612dea4cb6b37d388fbe5a4, type: 3}
---- !u!224 &1434316987372655281 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1586473235704095743, guid: d6249d273612dea4cb6b37d388fbe5a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 424462837950804302}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1607047777387258637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -933,6 +926,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1629604107}
     m_Modifications:
+    - target: {fileID: 7482300925981859232, guid: 46cd8e79fd3ddd644a9ec5c5b7dcd8e5,
+        type: 3}
+      propertyPath: itemLibrary.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7482300925981859233, guid: 46cd8e79fd3ddd644a9ec5c5b7dcd8e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -991,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 7482300925981859235, guid: 46cd8e79fd3ddd644a9ec5c5b7dcd8e5,
         type: 3}
       propertyPath: m_Name
-      value: InventoryExamplePrefab
+      value: creature inv
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46cd8e79fd3ddd644a9ec5c5b7dcd8e5, type: 3}
