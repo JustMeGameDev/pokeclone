@@ -81,7 +81,6 @@ public class FightUI : MonoBehaviour
         //scoreText.text = "Points: " + 1;
     }
 
-
     public void Update()
     {
         Slider.value = CalculateHealth();
@@ -104,7 +103,6 @@ public class FightUI : MonoBehaviour
     {//als de max health 100 is en health 10 veranderd de healthbar
         return Health / MaxHealth;
     }
-
 
 
     public void FightMenu()
