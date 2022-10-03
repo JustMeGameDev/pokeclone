@@ -89,12 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825f62b4c27693449853131089e4e9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 10
-  EnemyMaxHealth: 100
+  EnemyHealth: 22
+  EnemyMaxHealth: 30
   EnemyAttack: 5
   EnemySpeed: 3
   minDmg: 1
   maxDmg: 10
-  EnemyHealthBar: {fileID: 0}
-  EnemySlider: {fileID: 0}
-  EnemyHealthText: {fileID: 0}

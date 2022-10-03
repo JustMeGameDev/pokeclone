@@ -7,6 +7,8 @@ public class EnemyHealthbar : MonoBehaviour
 {
 
     EnemyStats es;
+    SpawnEnemy ses;
+    GameObject currentEnemy;
 
     //EnemyHealth
     [Header("healthbar")]
@@ -24,9 +26,16 @@ public class EnemyHealthbar : MonoBehaviour
 
     }
 
-    private void Awake()
+    public void Init()
     {
-        es = GetComponent<EnemyStats>();
+        //GetComponent Spawn Enemy script
+        ses = GetComponent<SpawnEnemy>();
+        //Haal uit enemyscript de list gemaamd Enemies en haal daaruit entry 0 (De eerste vijand uit de list)
+        Debug.Log(ses.ChooseEnemy);
+        currentEnemy = ses.Enemies[ses.ChooseEnemy];
+
+        //GetComponent Enemystats uit de huidige vijand en noem die ES
+        es = currentEnemy.GetComponent<EnemyStats>();
     }
     public void Start()
     {
@@ -34,7 +43,7 @@ public class EnemyHealthbar : MonoBehaviour
         
 
 
-       es.EnemyHealth = es.EnemyMaxHealth;
+        es.EnemyHealth = es.EnemyMaxHealth;
         EnemySlider.value = CalculateEnemyHealth();
 
 
@@ -44,8 +53,8 @@ public class EnemyHealthbar : MonoBehaviour
 
     public void Update()
     {
-        
 
+        
         EnemyHealthText.text = es.EnemyHealth.ToString() + " / " + es.EnemyMaxHealth.ToString();
 
     }
