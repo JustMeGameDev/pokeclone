@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 5655577754550103172}
   - component: {fileID: 5554064468378328893}
   - component: {fileID: 590625719}
+  - component: {fileID: 2355093908774876156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -629,6 +630,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Volume: {fileID: 256206256}
   transition: 0
+  detransition: 0
+  scene: 
+--- !u!114 &2355093908774876156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655577754550103192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136dacbaecc6fe34283380a489731beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  InteractImage: {fileID: 5655577754623362404}
+  devaultIcon: {fileID: 21300000, guid: 5a7edb4c2a24c664393dc3ed369d41b8, type: 3}
+  DevaultIconSize: {x: 25, y: 25}
+  devaultInteracticon: {fileID: 0}
+  DevaultInteractIconSize: {x: 25, y: 25}
 --- !u!1 &5655577754623362406
 GameObject:
   m_ObjectHideFlags: 0
