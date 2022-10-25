@@ -6,27 +6,38 @@ using TMPro;
 
 public class EnemyStats : MonoBehaviour
 {
-  
+    public string unitname;
+    public int unitlevel;
 
-    [Header("enemystats")]
-    //enemy stats
-    public float EnemyHealth;
-    public float EnemyMaxHealth;
-    public int EnemyAttack;
-    public int EnemySpeed;
-
-   
-    //Damage
-    public int minDmg = 1;
-    public int maxDmg = 10;
+    public int damage;
 
     
-
-    
-   
-
+    public int MaxHealth;
+    public int Health;
 
 
-    
+
+
+    public bool TakeDamage(int dmg)
+    {
+        Health -= damage;
+
+        if (Health <= 0)
+            return true;
+        else
+            return false;
+
+        
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

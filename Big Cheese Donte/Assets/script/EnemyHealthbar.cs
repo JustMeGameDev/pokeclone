@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 public class EnemyHealthbar : MonoBehaviour
 {
-
+    FightUI Fui;
     EnemyStats es;
     SpawnEnemy ses;
     GameObject currentEnemy;
@@ -15,16 +16,22 @@ public class EnemyHealthbar : MonoBehaviour
     public GameObject EnemyHealthBar;
     public Slider EnemySlider;
     public TextMeshProUGUI EnemyHealthText;
+    public TextMeshProUGUI EnemyName;
+    
 
 
-    public void Damage(int amount)
+    private void Awake()
     {
-        // Enemy Damage
-        es.EnemyHealth -= Random.Range(es.minDmg, es.maxDmg);
-
-        es.EnemyHealth -= amount;
+        Fui = GetComponent<FightUI>();
+        
+    }
+    public void SetName()
+    {
+        EnemyName.text = Fui.randomName;
 
     }
+
+    
 
     public void Init()
     {
@@ -40,10 +47,10 @@ public class EnemyHealthbar : MonoBehaviour
     public void Start()
     {
 
-        
 
 
-        es.EnemyHealth = es.EnemyMaxHealth;
+
+        es.Health = es.MaxHealth;
         EnemySlider.value = CalculateEnemyHealth();
 
 
@@ -55,7 +62,7 @@ public class EnemyHealthbar : MonoBehaviour
     {
 
         
-        EnemyHealthText.text = es.EnemyHealth.ToString() + " / " + es.EnemyMaxHealth.ToString();
+        EnemyHealthText.text = es.Health.ToString() + " / " + es.MaxHealth.ToString();
 
     }
 
@@ -63,6 +70,6 @@ public class EnemyHealthbar : MonoBehaviour
 
     float CalculateEnemyHealth()
     {
-        return es.EnemyHealth / es.EnemyMaxHealth;
+        return es.Health / es.MaxHealth;
     }
 }
