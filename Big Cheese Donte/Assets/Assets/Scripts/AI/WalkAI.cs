@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class WalkAI : MonoBehaviour
 {
@@ -15,21 +17,28 @@ public class WalkAI : MonoBehaviour
     public float NPCtimerMax = 7f;
     public bool Npctimerbool;
 
+    public GameObject Crosshaircanv;
+    public GameObject Textcanv;
+    public string Textvalue;
+    public TMP_Text textelement;
+
+
     public bool NPClooker;
     public GameObject Player;
 
     void Start()
-    { 
+    {
+        textelement.text = Textvalue;
         agent = GetComponent<NavMeshAgent>();
         UpdateDes();
         Npctimerbool = false;
-
         NPClooker = false;
        
     }
 
     void Update()
     {
+        textelement.text = Textvalue;
         if (Vector3.Distance(transform.position, target) < 1)
         {
 
@@ -39,6 +48,7 @@ public class WalkAI : MonoBehaviour
         }
         if (Npctimerbool == true)
         {
+            
             agent.enabled = false;
             NPCtimer -= Time.deltaTime;
             transform.LookAt(Player.transform);
@@ -50,6 +60,10 @@ public class WalkAI : MonoBehaviour
 
                 ITWwaypointIndex();
                 UpdateDes();
+                Textcanv.SetActive(false);
+                Crosshaircanv.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
 
             }
         }
@@ -73,5 +87,21 @@ public class WalkAI : MonoBehaviour
         Npctimerbool = true;
         NPCtimer = NPCtimerMax;
     }
+
+    public void Mousecursoron()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    public void QuitDiolog()
+    {
+        ITWwaypointIndex();
+        UpdateDes();
+        Textcanv.SetActive(false);
+        Crosshaircanv.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
 
 }
