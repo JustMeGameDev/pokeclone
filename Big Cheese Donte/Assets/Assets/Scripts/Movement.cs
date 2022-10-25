@@ -23,10 +23,17 @@ public class Movement : MonoBehaviour
 
     Rigidbody RB;
 
+    //Animation
+    public Animator animator;
+
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
         //RB.freezeRotation = true;
+
+        animator = GetComponent<Animator>();
+        
+
     }
     private void Update()
     {
@@ -38,6 +45,9 @@ public class Movement : MonoBehaviour
             RB.drag = grounddrag;
         else
             RB.drag = 0;
+
+
+      
     }
     private void FixedUpdate()
     {
@@ -46,7 +56,9 @@ public class Movement : MonoBehaviour
     private void PInput()
     {
         horizontalI = Input.GetAxisRaw("Horizontal");
-        verticalI = Input.GetAxisRaw("Vertical"); 
+        verticalI = Input.GetAxisRaw("Vertical");
+
+        
     }
     private void Moveplayer()
     {
