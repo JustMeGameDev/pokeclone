@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    EnemyHealthbar ehb;
+    
 
     public GameObject[] Enemies;
     public  int ChooseEnemy;
@@ -13,7 +13,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Start()
     {
-        ehb = GetComponent<EnemyHealthbar>();
+       
         ChooseEnemy = Random.Range(0, Enemies.Length);
         currentEnemy = ChooseEnemy;
         
@@ -25,7 +25,7 @@ public class SpawnEnemy : MonoBehaviour
             enemy.transform.SetParent(GameObject.FindGameObjectWithTag("SpawnEnemy").transform, false);
           
         }
-        ehb.Init();
+        
        
     }
 

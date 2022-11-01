@@ -10,6 +10,9 @@ using TMPro;
 
 public class FightUI : MonoBehaviour
 {
+    Unit unit;
+
+
     public GameObject Main;
     public GameObject Fight;
     public GameObject Items;
@@ -29,15 +32,16 @@ public class FightUI : MonoBehaviour
     
     public string randomName;
 
-    EnemyHealthbar EH;
+    
 
-    private void Start()
+    
+    public void Awake()
     {
-        randomName = Names[Random.Range(0,Names.Count)];
-        EH = GetComponent<EnemyHealthbar>();
-        EH.SetName();
+        randomName = Names[Random.Range(0, Names.Count)];
+        
+        
     }
-
+    
 
     public void FightMenu()
     {
