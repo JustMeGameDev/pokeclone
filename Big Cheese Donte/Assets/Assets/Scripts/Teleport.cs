@@ -8,23 +8,21 @@ public class Teleport : MonoBehaviour
 {
     [Header("Varibles")]
     public Transform Destination;       // Gameobject where they will be teleported to
-    public string TagList = "|Player|Ai|"; // List of all tags that can teleport
+    public string[] tags;
     public Volume m_Volume;
     private bool detransition;
     private bool transition;
     public CapsuleCollider collider;
     public GameObject @object;
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other == collider)
-        {  
-            transition = true;
-            @object = GameObject.FindGameObjectWithTag("Player");
-        }
-        // If the tag of the colliding object is allowed to teleport
-    }
 
+    // If the tag of the colliding object is allowed to teleport
+    // Use this for initialization
+    private void Awake()
+    {
+            m_Volume = GameObject.FindGameObjectWithTag("volume").GetComponent<Volume>();
+
+    }
     void FixedUpdate()
     {
         if (detransition)
@@ -32,11 +30,9 @@ public class Teleport : MonoBehaviour
             m_Volume.weight -= (Time.deltaTime * .8f);
             if (m_Volume.weight <= .000001f)
             {
-                detransition = false;
-                transition = false;
-                m_Volume.weight = 0.00001f;
                 @object.GetComponent<Movement>().enabled = true;
-
+                detransition = false;
+                m_Volume.weight = 0.00001f;
             }
         }
 
@@ -46,13 +42,22 @@ public class Teleport : MonoBehaviour
             m_Volume.weight += (Time.deltaTime * .5f);
             if (m_Volume.weight >= .99f)
             {
-                
-                @object.transform.position = new Vector3(Destination.transform.position.x, @object.transform.position.y, Destination.transform.position.z);
-                
-                @object.transform.rotation = Destination.transform.rotation;
-                transition = false;
-                detransition = true;
+            if (System.Array.IndexOf(tags, @object.tag) != -1)
+                {
+                    // Update other objects position and rotation
+                    @object.transform.position = Destination.transform.position;
+                    @object.transform.rotation = Destination.transform.rotation;
+                    transition = false;
+                    detransition = true;
+                }
             }
         }
+        
     }
-}
+        public void OnTriggerEnter(Collider other)
+        {
+            @object = other.gameObject;
+            transition = true;
+        }
+        // If the tag of the colliding object is allowed to teleport
+    }
