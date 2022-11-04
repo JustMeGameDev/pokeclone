@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - Encounter
   - Encounter test
+  - floor
+  - volume
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Inneractable
   - postprocess
-  - 
+  - no light
   - 
   - 
   - 
