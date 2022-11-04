@@ -56,8 +56,12 @@ public class Teleport : MonoBehaviour
     }
         public void OnTriggerEnter(Collider other)
         {
-            @object = other.gameObject;
-            transition = true;
+            if (System.Array.IndexOf(tags, other.tag) != -1)
+            {
+                @object = other.gameObject;
+                transition = true;
+            }
         }
+
         // If the tag of the colliding object is allowed to teleport
     }
