@@ -23,15 +23,11 @@ public class Movement : MonoBehaviour
 
     Rigidbody RB;
 
-    //Animation
-    public Animator animator;
-
+    
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
         //RB.freezeRotation = true;
-
-        animator = GetComponent<Animator>();
         
 
     }
