@@ -20,8 +20,8 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
-    public int heal;
-
+    
+    
     private void Awake()
     {
 
@@ -63,16 +63,7 @@ public class Unit : MonoBehaviour
         else
             return false;
     }
-    public bool HealDamage(int heal)
-    {
-        heal = currentHP + 5;
-        currentHP += heal; 
-
-        if (currentHP <= 0)
-            return true;
-        else
-            return false;
-    }
+   
 
     public void Heal(int amount)
     {

@@ -38,7 +38,7 @@ public class moves : MonoBehaviour
         FUI.GoBackItems();
         FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
-        isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 1);
+        isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage);
 
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
         bs.dialogueText.text = "the attack is succesfull";
@@ -61,7 +61,7 @@ public class moves : MonoBehaviour
         FUI.GoBackItems();
         FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 2);
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10 / 8);
 
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
         bs.dialogueText.text = "the attack is succesfull";
@@ -81,6 +81,25 @@ public class moves : MonoBehaviour
         FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
         bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 2);
+
+        bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
+        bs.dialogueText.text = "the attack is succesfull";
+
+        yield return new WaitForSeconds(2f);
+
+        IsDeadCheck();
+
+    }
+    public IEnumerator tortuere()
+    {
+        FightUI FUI;
+        FUI = GetComponent<FightUI>();
+
+        FUI.GoBackFight();
+        FUI.GoBackItems();
+        FUI.GoBackRecruit();
+        //                                                    V kan je plus of min doen ivm welke move het is
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10/7);
 
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
         bs.dialogueText.text = "the attack is succesfull";
