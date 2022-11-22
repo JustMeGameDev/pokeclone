@@ -6,6 +6,7 @@ public class LookCam : MonoBehaviour
 {
   public float sensY;
   public float sensX;
+  
 
     public Transform OR;
 
@@ -18,7 +19,8 @@ public class LookCam : MonoBehaviour
         Cursor.visible = false;
     }
     private void Update()
-    {
+    { 
+        
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -28,6 +30,7 @@ public class LookCam : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRot, YRot, 0);
         OR.rotation = Quaternion.Euler(0, YRot, 0);
+       
     }
 
 }
