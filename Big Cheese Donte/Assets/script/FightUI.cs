@@ -6,13 +6,11 @@ using TMPro;
 
 
 
-
-
 public class FightUI : MonoBehaviour
 {
     Unit unit;
 
-
+    
     public GameObject Main;
     public GameObject Fight;
     public GameObject Items;
@@ -32,14 +30,9 @@ public class FightUI : MonoBehaviour
     
     public string randomName;
 
-    
-
-    
     public void Awake()
     {
         randomName = Names[Random.Range(0, Names.Count)];
-        
-        
     }
     
 
@@ -48,8 +41,6 @@ public class FightUI : MonoBehaviour
         Main.SetActive(false);
         Fight.SetActive(true);
         LinkerFightText.text = randomName + FightQuip[Random.Range(0, FightQuip.Count)]; // dit zorgt ervoor dat je een random quip krijgt als je op fight klikt
-
-
     }
     public void ItemMenu()
     {
@@ -86,7 +77,4 @@ public class FightUI : MonoBehaviour
         Recruit.SetActive(false);
         Main.SetActive(true);
     }
-    
-
-
 }

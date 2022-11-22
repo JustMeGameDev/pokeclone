@@ -24,8 +24,6 @@ public class Unit : MonoBehaviour
     
     private void Awake()
     {
-
-
         if (CompareTag("enemy"))
         {
             unitLevelEnemy = Random.Range(LvlRangeMin, LvlRangeMax);

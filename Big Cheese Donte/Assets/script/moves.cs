@@ -11,7 +11,6 @@ public class moves : MonoBehaviour
     private void Awake()
     {
         bs = GetComponent<BattleSystem>();
-        
     }
 
     public void IsDeadCheck()
@@ -30,7 +29,7 @@ public class moves : MonoBehaviour
 
 
    public IEnumerator Punch()
-    {
+   {
         FightUI FUI;
         FUI = GetComponent<FightUI>();
 
@@ -46,9 +45,7 @@ public class moves : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         IsDeadCheck();
-        
-
-    }
+   }
 
 
 
