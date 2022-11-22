@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     float verticalI;
 
     public StickyPlatform sticky;
-
+    public bool inMenu;
     Vector3 moveDir;
 
    public Rigidbody RB;
@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
             sticky.colide = false;
         }
 
-
+       
 
 
     }

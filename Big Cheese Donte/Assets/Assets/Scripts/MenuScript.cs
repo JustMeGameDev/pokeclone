@@ -6,15 +6,18 @@ using UnityEngine;
 public class MenuScript : MonoBehaviour
 {
     //Edit for StartGame Mogelijk
-
-    public void PlayGameSimple ()
+    public void Main()
     {
-        SceneManager.LoadScene("New Scene");
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void settings ()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public void PlayGame()
     {
-        //Add transiton and save file loader
+        SceneManager.LoadScene("world");
     }
 
     public void ExitGame()

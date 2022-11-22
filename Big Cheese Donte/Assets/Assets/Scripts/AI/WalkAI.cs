@@ -11,7 +11,7 @@ public class WalkAI : MonoBehaviour
     
     public Transform[] waypoints;
     int waypointindex;
-    Vector3 target;
+    public Vector3 target;
 
     public float NPCtimer = 0f;
     public float NPCtimerMax = 7f;
@@ -51,6 +51,8 @@ public class WalkAI : MonoBehaviour
             
             agent.enabled = false;
             NPCtimer -= Time.deltaTime;
+            Textcanv.SetActive(true);
+            Player.GetComponent<Movement>().enabled = false;
             transform.LookAt(Player.transform);
             if (NPCtimer <= 0f)
             {
@@ -60,10 +62,8 @@ public class WalkAI : MonoBehaviour
 
                 ITWwaypointIndex();
                 UpdateDes();
-                Textcanv.SetActive(false);
-                Crosshaircanv.SetActive(true);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+
+                QuitDiolog();
 
             }
         }
@@ -99,6 +99,8 @@ public class WalkAI : MonoBehaviour
         UpdateDes();
         Textcanv.SetActive(false);
         Crosshaircanv.SetActive(true);
+        Player.GetComponent<Movement>().enabled = true;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
