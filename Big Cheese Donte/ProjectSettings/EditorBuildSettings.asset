@@ -5,16 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Assets/Scenes/MainMenu.unity
-    guid: ca58432afc773134497c977c44af27f3
-  - enabled: 1
-    path: Assets/Assets/Scenes/New Scene.unity
-    guid: e6aeadc620af8964695d8b201c26537a
-  - enabled: 1
-    path: Assets/2d vecht ui.unity
-    guid: e380f2702c014b6488a0c01d61f6a8cb
-  - enabled: 1
-    path: Assets/Encounter System/Encounter.unity
-    guid: 2a459adc9cdbfb943bfedb5ac4d46007
+  - enabled: 0
+    path: Assets/OutdoorsScene.unity
+    guid: 8124e5870f4fd4c779e7a5f994e84ad1
   m_configObjects: {}

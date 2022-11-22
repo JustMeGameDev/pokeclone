@@ -6,6 +6,7 @@ public class Block : MonoBehaviour, ISaveable
 {
     [SerializeField] float speed;
     [SerializeField] Vector3 direction;
+    [SerializeField] string someText;
 
     [SerializeField] GameObject movingPart;
  
@@ -15,15 +16,7 @@ public class Block : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Start()
     {
-        // If you do not want that the SaveSystem saves the Transform data (position, rotation and scale),
-        // than you can turn it off by calling the SetSaveTransform(false) on the SaveableEntity Component.
-        // You also can switch this on and off for each SaveableEntity in the Editor by cklicking on "Show Base" in the "SaveSystem ID Management" display and
-        // than click on "Save Transform"
-        SaveableEntity thisSaveable = GetComponent<SaveableEntity>();
-        if(thisSaveable != null)
-        {
-            thisSaveable.SetSaveTransform(false);
-        }
+        
     }
 
     // Update is called once per frame
@@ -45,7 +38,9 @@ public class Block : MonoBehaviour, ISaveable
     {
         public float speed;
         public SaveableEntity.Vector3Data direction; // Use this vector type for unity Vector3
+        public string text;
         public float timePos;
+        
     }
     
     public object SaveState()
@@ -54,7 +49,8 @@ public class Block : MonoBehaviour, ISaveable
         {
             speed = speed,
             direction = new SaveableEntity.Vector3Data(direction),
-            timePos = timePos
+            timePos = timePos,
+            text = someText
         };
     }
     public void LoadState(object state)
@@ -63,6 +59,7 @@ public class Block : MonoBehaviour, ISaveable
         speed = data.speed;
         direction = data.direction.ToVector3();
         timePos = data.timePos;
+        someText = data.text;
     }
 
     public bool NeedsToBeSaved()

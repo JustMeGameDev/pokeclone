@@ -8,8 +8,6 @@ TagManager:
   - Encounter
   - Encounter test
   - SpawnEnemy
-  - floor
-  - volume
   layers:
   - Default
   - TransparentFX
@@ -19,7 +17,7 @@ TagManager:
   - UI
   - Inneractable
   - postprocess
-  - no light
+  - 
   - 
   - 
   - 
