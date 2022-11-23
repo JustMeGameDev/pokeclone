@@ -24,6 +24,10 @@ public class recruitment : MonoBehaviour
 
     public TextMeshProUGUI geldText;
 
+    //varibles
+    public int bribeChance;
+
+    public List<GameObject> teamMember = new List<GameObject>();
 
     private void Update()
     {
@@ -38,9 +42,9 @@ public class recruitment : MonoBehaviour
 
     public void Bribe()
     {
-        foreach(geld += 10)
+        for (int i = 10; i <geld ;i += 10 )
         {
-
+            bribeChance++;
         }
    
     }
