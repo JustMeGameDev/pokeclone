@@ -6,11 +6,14 @@ public class moves : MonoBehaviour
 {
     BattleSystem bs;
 
+    recruitment RT;
+
     bool isDead;
 
     private void Awake()
     {
         bs = GetComponent<BattleSystem>();
+        RT = GetComponent<recruitment>();
     }
 
     public void IsDeadCheck()
@@ -45,6 +48,9 @@ public class moves : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         IsDeadCheck();
+
+
+      
    }
 
 
@@ -105,6 +111,11 @@ public class moves : MonoBehaviour
 
         IsDeadCheck();
 
+    }
+
+    public void PunchRT()
+    {
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 100);
     }
 
 
