@@ -7,15 +7,25 @@ public abstract class enemyRT : recruitment
 
     protected int procentToRecruit = 1;
 
+    // tijderlijke inventorie
+     List<object> BecomeTeammate = new List<object>();
+
+    private void Start()
+    {
+        bribeChance = procentToRecruit * 100 / 10;
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        bribeChance = procentToRecruit * 100 / 10;
-
-        if (procentToRecruit == 100)
+        
+        if (bribeChance == 100)
         {
-            
+            if (Gift)
+            {
+                BecomeTeammate.Add(BecomeTeammate);
+            }
         }
     }
 }

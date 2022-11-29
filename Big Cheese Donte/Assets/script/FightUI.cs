@@ -15,6 +15,7 @@ public class FightUI : MonoBehaviour
     public GameObject Fight;
     public GameObject Items;
     public GameObject Recruit;
+    public GameObject RTbribe;
 
     List<string> Names = new List<string> {"Jhon: ", "Jesse: ", "Finn: ", "Driss: ", "Thijs: ", "Kornee: ", "Jarno: ", "David: ", "Walter: ", "Jessie: ", "Niels: ","Jesper: ", "Arjen: ","Storm: ", "Max:s " };
     List<string> FightQuip = new List<string> { "\"Why don't you come at me if you want to die that bad\"", "\"You really do have a deadwish or am i wrong?\"", "\"You think you can beat me?! dont make me laugh\"", "\"You cant defeat me, if you want to defeat me you have to train for another 1000 years!!\"" }; // quips voor het vechten
@@ -53,6 +54,12 @@ public class FightUI : MonoBehaviour
         Main.SetActive(false);
         Recruit.SetActive(true);
         LinkerRecruitText.text = randomName + RecruitQuip[Random.Range(0, RecruitQuip.Count)];
+    }
+    public void RecruitBribe()
+    {
+        Recruit.SetActive(false);
+        RTbribe.SetActive(true);
+
     }
     public void Run()
     {

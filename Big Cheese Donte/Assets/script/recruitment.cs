@@ -21,11 +21,14 @@ public class recruitment : MonoBehaviour
 
     public GameObject plusGeld;
     public GameObject minGeld;
-
     public TextMeshProUGUI geldText;
 
     //varibles
     public int bribeChance;
+
+    //gift
+    public GameObject Gift;
+
 
     public List<GameObject> teamMember = new List<GameObject>();
 
@@ -58,4 +61,6 @@ public class recruitment : MonoBehaviour
           geld--;
     
     }
+
+   
 }
