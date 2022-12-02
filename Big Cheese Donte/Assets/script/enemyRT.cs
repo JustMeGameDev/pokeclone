@@ -8,7 +8,7 @@ public abstract class enemyRT : recruitment
     protected int procentToRecruit = 1;
 
     // tijderlijke inventorie
-     List<object> BecomeTeammate = new List<object>();
+    
 
     private void Start()
     {
@@ -17,15 +17,18 @@ public abstract class enemyRT : recruitment
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
+
         if (bribeChance == 100)
         {
             if (Gift)
             {
-                BecomeTeammate.Add(BecomeTeammate);
+                teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
             }
         }
     }
+
+   
 }
