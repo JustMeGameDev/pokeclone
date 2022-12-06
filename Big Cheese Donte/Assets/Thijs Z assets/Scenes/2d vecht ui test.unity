@@ -185,7 +185,6 @@ MonoBehaviour:
   Items: {fileID: 0}
   Recruit: {fileID: 0}
   RTbribe: {fileID: 0}
-  Rtpersuade: {fileID: 0}
   Names:
   - 'Jhon: '
   - 'Jesse: '
@@ -242,6 +241,7 @@ MonoBehaviour:
   WantToTeamUp: 1
   refuse: 0
   Gift: {fileID: 0}
+  teamMember: []
   LinkerRecruitText: {fileID: 0}
 --- !u!114 &24451854
 MonoBehaviour:
@@ -6359,7 +6359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1341204045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6403,7 +6403,6 @@ MonoBehaviour:
   Items: {fileID: 0}
   Recruit: {fileID: 0}
   RTbribe: {fileID: 0}
-  Rtpersuade: {fileID: 0}
   Names:
   - 'Jhon: '
   - 'Jesse: '
@@ -6460,6 +6459,7 @@ MonoBehaviour:
   WantToTeamUp: 2
   refuse: 0
   Gift: {fileID: 0}
+  teamMember: []
   LinkerRecruitText: {fileID: 2089055711}
 --- !u!114 &1341204047
 MonoBehaviour:
@@ -8123,7 +8123,6 @@ GameObject:
   - component: {fileID: 1715431895}
   - component: {fileID: 1715431896}
   - component: {fileID: 1715431897}
-  - component: {fileID: 1715431898}
   m_Layer: 0
   m_Name: ui scripts
   m_TagString: Untagged
@@ -8148,7 +8147,6 @@ MonoBehaviour:
   Items: {fileID: 1678689428}
   Recruit: {fileID: 2112284897}
   RTbribe: {fileID: 24451851}
-  Rtpersuade: {fileID: 1341204044}
   Names:
   - 'Jhon: '
   - 'Jesse: '
@@ -8257,19 +8255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e8a39ec08cb6d4e818f02f35364c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1715431898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715431892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a72c568c62ccf444ba5ad6aebc2381d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: []
 --- !u!1 &1734508063
 GameObject:
   m_ObjectHideFlags: 0
@@ -9106,19 +9091,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976588951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1715431893}
-        m_TargetAssemblyTypeName: FightUI, Assembly-CSharp
-        m_MethodName: RecruitPersaude
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1976588951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10018,7 +9991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2112284898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10099,7 +10072,6 @@ MonoBehaviour:
   Items: {fileID: 0}
   Recruit: {fileID: 0}
   RTbribe: {fileID: 0}
-  Rtpersuade: {fileID: 0}
   Names:
   - 'Jhon: '
   - 'Jesse: '
@@ -10156,6 +10128,7 @@ MonoBehaviour:
   WantToTeamUp: 1
   refuse: 0
   Gift: {fileID: 0}
+  teamMember: []
   LinkerRecruitText: {fileID: 0}
 --- !u!1 &2121479214
 GameObject:
