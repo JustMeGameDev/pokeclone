@@ -20,11 +20,11 @@ public class inventrory : MonoBehaviour
     {
         if (itemDictionary.TryGetValue(itemdata, out inventoryitem Item))
         {
-            //add naar stack
+            // Nee add naar stack
             Item.AddToStack();
             print($"{Item.itemdata.displayname}Totaal stack is nu {Item.stackSize}");
         }
-        else // Maak nieuwe item soort
+        else//ja Maak nieuwe item soort
         {
             inventoryitem newitem = new inventoryitem(itemdata);
             itemDictionary.Add(itemdata, newitem);
