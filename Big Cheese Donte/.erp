@@ -5,7 +5,12 @@
   <resetOnSceneChange>false</resetOnSceneChange>
   <debugMode>false</debugMode>
   <EditorClosed>true</EditorClosed>
+<<<<<<< HEAD
   <LastTimestamp>1670327288</LastTimestamp>
   <LastSessionID>147770794434348547</LastSessionID>
+=======
+  <LastTimestamp>1670328120</LastTimestamp>
+  <LastSessionID>4453548476459372834</LastSessionID>
+>>>>>>> Thijs-Z
   <Errored>true</Errored>
 </ERPSettings>
