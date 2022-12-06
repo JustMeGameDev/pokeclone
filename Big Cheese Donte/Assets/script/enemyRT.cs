@@ -25,7 +25,7 @@ public abstract class enemyRT : recruitment
         {
             if (Gift)
             {
-                teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+               // teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
             }
         }
     }

@@ -8,7 +8,8 @@ public class recruitment : FightUI
 {
     //andere scripts
     moves move;
-  
+    ICollectible col;
+    Unit u;
 
     //recruit options
     public GameObject tacklrRT;
@@ -36,16 +37,20 @@ public class recruitment : FightUI
     public GameObject Gift;
 
 
-    public List<GameObject> teamMember = new List<GameObject>();
+   // public List<GameObject> teamMember = new List<GameObject>();
 
     //text 
     public TextMeshProUGUI LinkerRecruitText;
     
     List<string> smartTalk = new List<string> { "\"if you join me then i take care of your family \"" };
     List<string> enemyTalk = new List<string> { "\"okie dokie \"" };
-    List<string> Names = new List<string> { "Jhon: ", "Jesse: ", "Finn: ", "Driss: ", "Thijs: ", "Kornee: ", "Jarno: ", "David: ", "Walter: ", "Jessie: ", "Niels: ", "Jesper: ", "Arjen: ", "Storm: ", "Max:s " };
-  
-  
+
+
+    private void Start()
+    {
+       
+    }
+
     private void Update()
     {
       //  geldText.text = geld.ToString(); 
@@ -92,7 +97,10 @@ public class recruitment : FightUI
         {
             //wel joinen
             //teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
-            teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+            //teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+            Enemystation.GetComponent<Unit>().Recruit();
+            //u.Recruit();
+
         }
 
 
@@ -115,7 +123,7 @@ public class recruitment : FightUI
         yield return new WaitForSeconds(2f);
         LinkerRecruitText.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
 
-        teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+        //teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
 
        
 

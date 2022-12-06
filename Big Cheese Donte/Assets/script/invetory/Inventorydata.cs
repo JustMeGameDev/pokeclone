@@ -7,4 +7,5 @@ public class Inventorydata : ScriptableObject
 {
     public string displayname;
     public Sprite icon;
+    public bool isRecruit;
 }
