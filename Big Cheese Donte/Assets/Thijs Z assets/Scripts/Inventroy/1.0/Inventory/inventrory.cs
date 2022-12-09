@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class inventrory : MonoBehaviour
 {
     //ZET DIT SCRIPT OP DE INVENTORYMAN
     public List<inventoryitem> inventory = new List<inventoryitem>();
     private Dictionary<Inventorydata, inventoryitem> itemDictionary = new Dictionary<Inventorydata, inventoryitem>();
+
+    public GameObject holder;
+
+    public GameObject inventoryUI;
 
     private void OnEnable()
     {
@@ -31,6 +36,12 @@ public class inventrory : MonoBehaviour
             print($"heeft {itemdata.displayname} voor de eerste keer toegevoegd");
         }
 
+        if(holder)
+        {
+            Instantiate(itemdata);
+        }
+        
+
     }
     public void Remove(Inventorydata itemdata)
     {
@@ -43,6 +54,14 @@ public class inventrory : MonoBehaviour
                 itemDictionary.Remove(itemdata);
             }
         }
+    }
+
+
+    public void invertroyUI()
+    {
+
+       
+        
     }
 }
 
