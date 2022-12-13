@@ -1,9 +1,20 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c6195a43a0187a34e9c6be23520d3766
 folderAsset: yes
 timeCreated: 1436977287
 licenseType: Store
 DefaultImporter:
+=======
+<<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Prefab/roads.meta
+guid: 29c8d5e9027345043b1d979c892f3f15
+========
+guid: 2fe3154d575b76f4fb62739b9120de09
+>>>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Standard Assets.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> fighting-ui-thijs
   userData: 
   assetBundleName: 
   assetBundleVariant: 

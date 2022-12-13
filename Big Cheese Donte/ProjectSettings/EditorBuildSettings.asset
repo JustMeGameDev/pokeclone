@@ -5,6 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Assets/Scenes/MainMenu.unity
     guid: ca58432afc773134497c977c44af27f3
@@ -17,4 +18,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/2d vecht ui test.unity
     guid: e380f2702c014b6488a0c01d61f6a8cb
+=======
+  - enabled: 0
+    path: Assets/OutdoorsScene.unity
+    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+>>>>>>> fighting-ui-thijs
   m_configObjects: {}

@@ -1,6 +1,20 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6ca8c4e270f964e0da9f731d7d34b123
 folderAsset: yes
 DefaultImporter:
   userData: 
   assetBundleName: 
+=======
+<<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Prefab/New.meta
+guid: 78ea490e71958354483fb7ded397ea18
+========
+guid: ca9a8556acb3ea848af57a64f82c952e
+>>>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Standard Assets/Environment.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> fighting-ui-thijs

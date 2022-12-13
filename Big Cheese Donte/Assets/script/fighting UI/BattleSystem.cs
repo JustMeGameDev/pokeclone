@@ -11,6 +11,9 @@ public class BattleSystem : MonoBehaviour
     FightUI FUI;
     moves move;
 
+    bool IsBleeding;
+    public int BleedCount;
+
 
 
     public BattleState state;
@@ -33,7 +36,7 @@ public class BattleSystem : MonoBehaviour
     int StabUsesLeft = 10;
     int ShootUsesLeft = 6;
     int TortureUsesLeft = 2;
-
+    int TurnCounter = 0;
 
 
     private void Start()
@@ -84,6 +87,7 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator EnemyTurn()
     {
+        
         dialogueText.text = enemyunit.unitName + " attacks";
 
         yield return new WaitForSeconds(2f);
@@ -111,6 +115,13 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
+        if (BleedCount >= 0)
+             {
+            move.Bleed();
+            BleedCount--;
+        }
+
+            // if bleed (doe zoveel enmy bleed damage)
         dialogueText.text = "choose an action ";
     }
 

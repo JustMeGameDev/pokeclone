@@ -6,63 +6,44 @@ public class Movement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-    [SerializeField] private float jump = 18f;
+
     public float grounddrag;
 
     [Header("groundcheck")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
-    public bool grounded2;
 
     public Transform orientation;
 
     float horizontalI;
     float verticalI;
 
+<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Scripts/Player baseus/Movement.cs
     public StickyPlatform sticky;
     public bool inMenu;
+=======
+>>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Assets/Scripts/Movement.cs
     Vector3 moveDir;
 
-   public Rigidbody RB;
-
-    //Animation
-    public Animator animator;
+    Rigidbody RB;
 
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
         //RB.freezeRotation = true;
-        sticky = GetComponent<StickyPlatform>();
-        animator = GetComponent<Animator>();
-        
-
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        var temphight = playerHeight * .5f + .2f;
-        Vector3 der = transform.TransformDirection(Vector3.down) * temphight;
-        Gizmos.DrawRay(transform.position, der);
     }
     private void Update()
     {
         PInput();
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        Gizmos.color = Color.yellow;
-       
-
 
         if (grounded)
-        {
             RB.drag = grounddrag;
-
-        }
         else
-        {
-            
             RB.drag = 0;
+<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Scripts/Player baseus/Movement.cs
         }
         if (Input.GetButtonDown("Jump") && sticky.colide)
         {
@@ -75,6 +56,8 @@ public class Movement : MonoBehaviour
        
 
 
+=======
+>>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Assets/Scripts/Movement.cs
     }
     private void FixedUpdate()
     {
@@ -83,10 +66,7 @@ public class Movement : MonoBehaviour
     private void PInput()
     {
         horizontalI = Input.GetAxisRaw("Horizontal");
-        verticalI = Input.GetAxisRaw("Vertical");
-
-
-        
+        verticalI = Input.GetAxisRaw("Vertical"); 
     }
     private void Moveplayer()
     {

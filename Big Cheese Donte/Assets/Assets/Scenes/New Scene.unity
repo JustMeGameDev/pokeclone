@@ -122,6 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
+<<<<<<< HEAD
   m_NavMeshData: {fileID: 23800000, guid: a989fcd660cadaa468b78ae3dfb06b46, type: 2}
 --- !u!1 &24980727
 GameObject:
@@ -259,6 +260,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51133949}
   m_CullTransparentMesh: 1
+=======
+  m_NavMeshData: {fileID: 0}
+>>>>>>> fighting-ui-thijs
 --- !u!1 &144200998
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,9 +507,15 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &187972456 stripped
 Transform:
+<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 1097011242300724839, guid: 576614cdecb6f244aa6f055f3d703ca5,
     type: 3}
   m_PrefabInstance: {fileID: 1097011242381733135}
+=======
+  m_CorrespondingSourceObject: {fileID: 5655577753675545086, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
+    type: 3}
+  m_PrefabInstance: {fileID: 5655577753489670806}
+>>>>>>> fighting-ui-thijs
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &198023916
 GameObject:
@@ -554,6 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPos: {fileID: 187972456}
+<<<<<<< HEAD
   CAMy: 0
   CAMZ: 0
 --- !u!114 &198023919
@@ -571,6 +582,8 @@ MonoBehaviour:
   cameraPos: {fileID: 954333838}
   CAMy: 0
   CAMZ: 0
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &221387827
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +621,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &252585990
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +659,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1097011242381733135}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &330365038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1209,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &613127076
+=======
+--- !u!114 &625801079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5655577754623362404, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
+    type: 3}
+  m_PrefabInstance: {fileID: 5655577753489670806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &632722562
+>>>>>>> fighting-ui-thijs
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1255,24 +1287,6 @@ Transform:
   m_Father: {fileID: 1463462867}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &717142686 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1735128943246136283, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
-    type: 3}
-  m_PrefabInstance: {fileID: 5655577753489670806}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &727408873 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6033137972822052867, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
-    type: 3}
-  m_PrefabInstance: {fileID: 5655577753489670806}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &857796135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1297,6 @@ GameObject:
   m_Component:
   - component: {fileID: 857796137}
   - component: {fileID: 857796136}
-  - component: {fileID: 857796138}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1303,7 +1316,11 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+<<<<<<< HEAD
   m_Intensity: 0
+=======
+  m_Intensity: 1
+>>>>>>> fighting-ui-thijs
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1343,11 +1360,16 @@ Light:
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
+<<<<<<< HEAD
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
+=======
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+>>>>>>> fighting-ui-thijs
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -1369,6 +1391,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< HEAD
 --- !u!114 &857796138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1787,8 @@ Transform:
   m_Father: {fileID: 198023917}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &981268725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1961,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &996038036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2091,8 @@ Transform:
   m_Father: {fileID: 1463462867}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &1091358768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2330,7 @@ MonoBehaviour:
   interactIcon: {fileID: 21300000, guid: 314518cb55067a3419666e4be0a1e083, type: 3}
   Iconsize: {x: 450, y: 200}
   ID: 1
+<<<<<<< HEAD
 --- !u!1 &1317250487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1097011242598663902, guid: 576614cdecb6f244aa6f055f3d703ca5,
@@ -2315,6 +2344,36 @@ Transform:
   m_PrefabInstance: {fileID: 5295911838234634366}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1463462866
+=======
+--- !u!1 &1121717113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5655577754903649821, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
+    type: 3}
+  m_PrefabInstance: {fileID: 5655577753489670806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121717118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121717113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136dacbaecc6fe34283380a489731beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  InteractImage: {fileID: 625801079}
+  devaultIcon: {fileID: 21300000, guid: 35db1b7a98aae8943a1e359145da4686, type: 3}
+  DevaultIconSize: {x: 25, y: 25}
+  devaultInteracticon: {fileID: 21300000, guid: 5a7edb4c2a24c664393dc3ed369d41b8,
+    type: 3}
+  DevaultInteractIconSize: {x: 25, y: 25}
+--- !u!1 &1262394056
+>>>>>>> fighting-ui-thijs
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2378,6 +2437,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1551642811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.06, y: 0.59, z: 42.8}
@@ -2387,6 +2447,80 @@ Transform:
   m_Father: {fileID: 1463462867}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 1338393166}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 6.7, y: 31.5, z: 103.77}
+  m_LocalScale: {x: 8, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 221387828}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1338393168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338393166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1338393169
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338393166}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6728dd2b01fdc6f40a0d4c42f9075179, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1338393170
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338393166}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> fighting-ui-thijs
 --- !u!1 &1556905019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2618,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556905019}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!1 &1587180673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,6 +2723,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587929124}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &1665776589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2826,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665776589}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!114 &1738251108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5295911839720895258, guid: bf1c7112cf4f66f48ad8b6af2cae97af,
@@ -2931,6 +3069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> fighting-ui-thijs
 --- !u!1 &1920029778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,6 +3284,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
         type: 3}
       propertyPath: devaultIcon
       value: 
@@ -3160,6 +3301,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5a7edb4c2a24c664393dc3ed369d41b8,
         type: 3}
+=======
+>>>>>>> fighting-ui-thijs
     - target: {fileID: 5655577754550103174, guid: 4e5fbcd40e0c59c4b800c0d0047e5463,
         type: 3}
       propertyPath: m_RootOrder
