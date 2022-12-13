@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class invertory : MonoBehaviour
 {
 
-    string[] TeamMate = {"teammate 1","teammate 2","teammate 3","teamate 4","teammate 5","teammate 6"};
+    //string[] TeamMate = {"teammate 1","teammate 2","teammate 3","teamate 4","teammate 5","teammate 6"};
 
     // The inventory is represented as an array of items
     public GameObject[] ItemArray;
