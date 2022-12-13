@@ -19,12 +19,7 @@ public class Movement : MonoBehaviour
     float horizontalI;
     float verticalI;
 
-<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Scripts/Player baseus/Movement.cs
-    public StickyPlatform sticky;
-    public bool inMenu;
-=======
->>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Assets/Scripts/Movement.cs
-    Vector3 moveDir;
+                    Vector3 moveDir;
 
     Rigidbody RB;
 
@@ -43,21 +38,10 @@ public class Movement : MonoBehaviour
             RB.drag = grounddrag;
         else
             RB.drag = 0;
-<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Scripts/Player baseus/Movement.cs
-        }
-        if (Input.GetButtonDown("Jump") && sticky.colide)
-        {
-            RB.constraints = RigidbodyConstraints.None;
-            RB.velocity = new Vector3(RB.velocity.x, jump, RB.velocity.z);
-            sticky.jump = true;
-            sticky.colide = false;
-        }
 
        
 
 
-=======
->>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Assets/Scripts/Movement.cs
     }
     private void FixedUpdate()
     {

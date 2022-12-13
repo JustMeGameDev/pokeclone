@@ -3,27 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Fire
-  - Encounter
-  - Encounter test
-  - SpawnEnemy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - whatIsGround
+  - 
   - Water
   - UI
-  - Inneractable
-  - postprocess
-<<<<<<< HEAD
-  - AInav
-=======
   - 
   - 
   - 
->>>>>>> fighting-ui-thijs
+  - 
+  - 
   - 
   - 
   - 
