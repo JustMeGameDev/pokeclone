@@ -42,8 +42,8 @@ public class recruitment : FightUI
     //text 
     public TextMeshProUGUI LinkerRecruitText;
     
-    List<string> smartTalk = new List<string> { "\"if you join me then i take care of your family \"" };
-    List<string> enemyTalk = new List<string> { "\"okie dokie \"" };
+    List<string> smartTalk = new List<string> { "\"If you do not join me i will obtain several kidney diseases \"" };
+    List<string> enemyTalk = new List<string> { "\"ait sure\"" };
 
 
     private void Start()
