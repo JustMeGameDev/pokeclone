@@ -10,6 +10,7 @@ TagManager:
   - SpawnEnemy
   - floor
   - volume
+  - pauze
   layers:
   - Default
   - TransparentFX
@@ -20,6 +21,8 @@ TagManager:
   - Inneractable
   - postprocess
   - AInav
+  - 
+  - 
   - 
   - 
   - 
