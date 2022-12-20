@@ -159,6 +159,8 @@ MonoBehaviour:
     type: 3}
   playerstation: {fileID: 194768598}
   enemystation: {fileID: 1491902906}
+  playerunit: {fileID: 0}
+  enemyunit: {fileID: 0}
   dialogueText: {fileID: 1203952244}
   playerHUD: {fileID: 4809096146196536420}
   enemyHUD: {fileID: 4809096147356793028}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Big Cheese Donte/Assets/Assets/Prefab/New.meta
 guid: 78ea490e71958354483fb7ded397ea18
+========
+guid: ca9a8556acb3ea848af57a64f82c952e
+>>>>>>>> fighting-ui-thijs:Big Cheese Donte/Assets/Standard Assets/Environment.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

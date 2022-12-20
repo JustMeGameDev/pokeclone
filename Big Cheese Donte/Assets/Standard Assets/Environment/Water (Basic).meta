@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dc7abfa0435174ded902b073322d67cc
 folderAsset: yes
 DefaultImporter:
   userData: 
   assetBundleName: 
+=======
+guid: 93dc829c76de4cf4eab0f96d246b0d68
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> fighting-ui-thijs
