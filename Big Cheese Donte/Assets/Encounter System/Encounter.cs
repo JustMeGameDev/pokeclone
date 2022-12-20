@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Encounter : MonoBehaviour
 {
 	public CapsuleCollider player;
@@ -11,13 +11,9 @@ public class Encounter : MonoBehaviour
 	public float maxtimer = 10f;
 	private bool done;
 	public int chance = 1;
-	public Transition transition;
-
-    private void Awake()
-    {
-		transition = gameObject.GetComponent<Transition>();
-    }
-    private void OnTriggerExit()
+ 
+	
+	private void OnTriggerExit()
 	
 	{
 		
@@ -39,7 +35,6 @@ public class Encounter : MonoBehaviour
 			encounter = true;
 			area = "Encounter";
 			print("spawn chance");
-			done = true;
 		}
 		
 		else if (Zone.CompareTag("Encounter test"))
@@ -58,7 +53,7 @@ public class Encounter : MonoBehaviour
 			if (chance > Random.Range(0, 26))
             {
 				print("gothja");
-				transition.transition = true;
+				SceneManager.LoadScene("encounter");
             }
 			else
             {
@@ -68,7 +63,7 @@ public class Encounter : MonoBehaviour
 
 		else if (Zone.CompareTag("Encounter test"))
 		{
-			transition.transition = true;
+			SceneManager.LoadScene("encounter");
 		}
 	}
 	
@@ -99,7 +94,6 @@ public class Encounter : MonoBehaviour
 				timer = 0;
 				chance++;
 				done = true;
-				
 			}
 		}
 	}

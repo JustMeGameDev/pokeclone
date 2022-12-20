@@ -6,12 +6,25 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
       value: 5006565753545b5a090a5a2446760d44424e4828297a77342f711935b6b86260
+=======
+      value: 5b0006520000510c5d08582414775c47414e1d7d2d7d2069747d186bb6e13069
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 5309075e55500c5a5f0c087044740944154e4d7e7c7177677e7b4a36e1b26160
+>>>>>>> fighting-ui-thijs
       flags: 0
     RecentlyUsedSceneGuid-1:
       value: 515000535c540d58540d08201621064445151e2f282a73312e7d1967b4b0646f
       flags: 0
     RecentlyUsedSceneGuid-2:
+<<<<<<< HEAD
+=======
+      value: 0607550304510a0d5f5e0d24487a0944404e4d2e742a74607c2a4f65b7b36339
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+>>>>>>> fighting-ui-thijs
       value: 55065753510250580b0a082611730b44404f4e797f2d76352e2a4860b0e4353e
       flags: 0
     RecentlyUsedSceneGuid-3:
@@ -43,7 +56,7 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 3
+  m_DesiredImportWorkerCount: 4
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
