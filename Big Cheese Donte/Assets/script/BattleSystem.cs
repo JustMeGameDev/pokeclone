@@ -45,6 +45,7 @@ public class BattleSystem : MonoBehaviour
         move = GetComponent<moves>();
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+        BleedCount = 0;
     }
 
 
@@ -115,10 +116,11 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
-        if (BleedCount >= 0)
-             {
+        if (BleedCount >= 0) //als een turn komt dan moet hij checken of de bleed is
+        {
+               print("Bleedcount" + BleedCount);
             move.Bleed();
-            BleedCount--;
+
         }
 
             // if bleed (doe zoveel enmy bleed damage)

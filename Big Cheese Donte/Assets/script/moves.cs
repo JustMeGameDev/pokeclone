@@ -57,22 +57,24 @@ public class moves : MonoBehaviour
         FightUI FUI;
         FUI = GetComponent<FightUI>();
 
-
+        FUI.GoBackFight();
+        FUI.GoBackItems();
+        FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
-
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10 / 18);
-        
-
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 1);
+        print("Outch");
+      
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
-        bs.dialogueText.text = "The Enemy Bled";//
+        bs.dialogueText.text = "the Bleed is succesfull";
 
         yield return new WaitForSeconds(2f);
 
         IsDeadCheck();
+
     }
 
 
-        public IEnumerator stab()
+    public IEnumerator stab()
     {
         FightUI FUI;
         FUI = GetComponent<FightUI>();
@@ -81,9 +83,9 @@ public class moves : MonoBehaviour
         FUI.GoBackItems();
         FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10 / 16);
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 1);
 
-        bs.BleedCount = 3;
+        bs.BleedCount += 3;
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
         bs.dialogueText.text = "the attack is succesfull";
 
