@@ -6,14 +6,12 @@ public class moves : MonoBehaviour
 {
     BattleSystem bs;
 
-    recruitment RT;
-
     bool isDead;
 
     private void Awake()
     {
         bs = GetComponent<BattleSystem>();
-        RT = GetComponent<recruitment>();
+        
     }
 
     public void IsDeadCheck()
@@ -32,7 +30,7 @@ public class moves : MonoBehaviour
 
 
    public IEnumerator Punch()
-   {
+    {
         FightUI FUI;
         FUI = GetComponent<FightUI>();
 
@@ -48,30 +46,10 @@ public class moves : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         IsDeadCheck();
-
-
-      
-   }
-    public IEnumerator Bleed()
-    {
-        FightUI FUI;
-        FUI = GetComponent<FightUI>();
-
-        FUI.GoBackFight();
-        FUI.GoBackItems();
-        FUI.GoBackRecruit();
-        //                                                    V kan je plus of min doen ivm welke move het is
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 1);
-        print("Outch");
-      
-        bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
-        bs.dialogueText.text = "the Bleed is succesfull";
-
-        yield return new WaitForSeconds(2f);
-
-        IsDeadCheck();
+        
 
     }
+
 
 
     public IEnumerator stab()
@@ -83,9 +61,8 @@ public class moves : MonoBehaviour
         FUI.GoBackItems();
         FUI.GoBackRecruit();
         //                                                    V kan je plus of min doen ivm welke move het is
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 1);
+        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10 / 8);
 
-        bs.BleedCount += 3;
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
         bs.dialogueText.text = "the attack is succesfull";
 
@@ -131,11 +108,6 @@ public class moves : MonoBehaviour
 
         IsDeadCheck();
 
-    }
-
-    public void PunchRT()
-    {
-        bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 100);
     }
 
 

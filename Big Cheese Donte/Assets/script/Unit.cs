@@ -20,11 +20,12 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
-    //ICollectible col;
-    Item item;
+    
     
     private void Awake()
     {
+
+
         if (CompareTag("enemy"))
         {
             unitLevelEnemy = Random.Range(LvlRangeMin, LvlRangeMax);
@@ -71,10 +72,6 @@ public class Unit : MonoBehaviour
         {
             currentHP = maxHP;
         }
-    }
-    public void Recruit()
-    {
-        item.Collect();
     }
 
 

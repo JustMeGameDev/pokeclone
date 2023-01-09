@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
+    
+
     public GameObject[] Enemies;
     public  int ChooseEnemy;
     public int currentEnemy;
@@ -11,6 +13,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Start()
     {
+       
         ChooseEnemy = Random.Range(0, Enemies.Length);
         currentEnemy = ChooseEnemy;
         
@@ -19,7 +22,7 @@ public class SpawnEnemy : MonoBehaviour
         if (ChooseEnemy >= 0 )
         {
            GameObject enemy = Instantiate(Enemies[ChooseEnemy], transform.position, transform.rotation) as GameObject;
-           enemy.transform.SetParent(GameObject.FindGameObjectWithTag("SpawnEnemy").transform, false);
+            enemy.transform.SetParent(GameObject.FindGameObjectWithTag("SpawnEnemy").transform, false);
           
         }
         

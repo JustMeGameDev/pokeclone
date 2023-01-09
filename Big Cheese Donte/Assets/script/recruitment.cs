@@ -59,7 +59,7 @@ public class recruitment : FightUI
 
     public void punch()
     {
-        move.PunchRT();
+        //move.PunchRT();
     }
 
     public void Bribe()
@@ -98,7 +98,7 @@ public class recruitment : FightUI
             //wel joinen
             //teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
             //teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
-            Enemystation.GetComponent<Unit>().Recruit();
+            //Enemystation.GetComponent<Unit>().Recruit();
             //u.Recruit();
 
         }
