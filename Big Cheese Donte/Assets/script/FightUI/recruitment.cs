@@ -37,10 +37,10 @@ public class recruitment : FightUI
     public GameObject Gift;
 
 
-   // public List<GameObject> teamMember = new List<GameObject>();
+    public List<GameObject> teamMember = new List<GameObject>();
 
     //text 
-    public TextMeshProUGUI LinkerRecruitText;
+    public TMP_Text LeftRecruitTextt;
     
     List<string> smartTalk = new List<string> { "\"If you do not join me i will obtain several kidney diseases \"" };
     List<string> enemyTalk = new List<string> { "\"ait sure\"" };
@@ -48,12 +48,12 @@ public class recruitment : FightUI
 
     private void Start()
     {
-       
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-      //  geldText.text = geld.ToString(); 
+        geldText.text = geld.ToString(); 
         //Debug.Log("work");
     }
 
@@ -90,24 +90,30 @@ public class recruitment : FightUI
         {
             print("test tekst");
             //niet joinen
-            LinkerRecruitText.text = RecruitQuip[Random.Range(0, RecruitQuip.Count)];
+            LeftRecruitTextt.text = RecruitQuip[Random.Range(0, RecruitQuip.Count)];
             
         }
         else
         {
             //wel joinen
-            //teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
-            //teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
-            //Enemystation.GetComponent<Unit>().Recruit();
-            //u.Recruit();
+            teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
+            teamMember.Add(GameObject.Find("enemy"));
+            Enemystation.GetComponent<Unit>();
+            Recruit();
 
         }
 
 
     }
+    public void Recruit()
+    {
+        teamMember.Add(GameObject.Find("enemy"));
+
+    }
+
     public void smart()
     {
-        // SmartRT();
+        SmartRT();
         StartCoroutine("SmartRT");
         print("works");
     }
@@ -118,12 +124,12 @@ public class recruitment : FightUI
         
         print("Smart manier");
             //niet joinen
-        LinkerRecruitText.text = randomName + smartTalk[Random.Range(0, smartTalk.Count)];
+       // LeftRecruitTextt.text = randomName + smartTalk[Random.Range(0, smartTalk.Count)];
        
         yield return new WaitForSeconds(2f);
-        LinkerRecruitText.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
+       // LeftRecruitTextt.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
 
-        //teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+        teamMember.Add(GameObject.Find("enemy"));
 
        
 
