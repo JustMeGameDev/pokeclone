@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class recruitment : FightUI
 {
@@ -10,6 +12,7 @@ public class recruitment : FightUI
     moves move;
     ICollectible col;
     Unit u;
+    shopmaster shopm;
 
     //recruit options
     public GameObject tacklrRT;
@@ -33,6 +36,8 @@ public class recruitment : FightUI
     public int WantToTeamUp = 2;
     public int refuse = 0;
 
+
+
     //gift
     public GameObject Gift;
 
@@ -48,6 +53,9 @@ public class recruitment : FightUI
 
     private void Start()
     {
+        shopm = GetComponent<shopmaster>();
+
+        shopm.money = geld;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -57,18 +65,29 @@ public class recruitment : FightUI
         //Debug.Log("work");
     }
 
-    public void punch()
-    {
-        //move.PunchRT();
-    }
-
     public void Bribe()
     {
-        for (int i = 10; i <geld ;i += 10 )
+        for (int i = 10; i < geld ;i += 10 )
         {
             bribeChance++;
+
+            if ()
+            {
+
+            }
         }
-   
+
+        if (bribeChance++ > 50)
+        {
+            
+            switchScene();
+        }
+        else
+        {
+            //no 
+            print("no");
+        }
+
     }
 
     public void geldErop()
@@ -78,7 +97,6 @@ public class recruitment : FightUI
     public void geldEraf()
     {
           geld--;
-    
     }
 
     public void DirectRT()
@@ -99,16 +117,20 @@ public class recruitment : FightUI
             teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
             teamMember.Add(GameObject.Find("enemy"));
             Enemystation.GetComponent<Unit>();
-            Recruit();
+            switchScene();
 
         }
 
 
     }
-    public void Recruit()
+
+    public IEnumerator switchScene()
     {
         teamMember.Add(GameObject.Find("enemy"));
 
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(scene);
     }
 
     public void smart()
@@ -120,8 +142,6 @@ public class recruitment : FightUI
 
     public IEnumerator SmartRT()
     {
-
-        
         print("Smart manier");
             //niet joinen
        // LeftRecruitTextt.text = randomName + smartTalk[Random.Range(0, smartTalk.Count)];
@@ -131,10 +151,12 @@ public class recruitment : FightUI
 
         teamMember.Add(GameObject.Find("enemy"));
 
-       
+        yield return new WaitForSeconds(2f);
 
-
+        SceneManager.LoadScene(scene);
+    
     }
+
 
    
 }
