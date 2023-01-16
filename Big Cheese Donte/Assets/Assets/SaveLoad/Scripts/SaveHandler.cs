@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class SaveHandler : MonoBehaviour {
 
-    [SerializeField] private GameObject unitGameObject;
-    private GameData gameData;
+   
+    public GameData gameData;
 
-    private void Awake() {
+    public void Awake() {
         gameData = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<GameData>();
         
     }
@@ -25,11 +25,12 @@ public class SaveHandler : MonoBehaviour {
 
     private void Save() {
         // Save
-        
 
-        SaveObject saveObject = new SaveObject { 
-           
-        };
+
+        SaveObject saveObject = new SaveObject {
+            Testt = "rewrite",
+            test = 420,
+        }; 
         string json = JsonUtility.ToJson(saveObject);
         SaveSystem.Save(json);
 
@@ -51,8 +52,8 @@ public class SaveHandler : MonoBehaviour {
     }
 
 
-    private class SaveObject {
-        public int goldAmount;
-        public Vector3 playerPosition;
+    public class SaveObject {
+        public int test;
+        public string Testt;
     }
 }
