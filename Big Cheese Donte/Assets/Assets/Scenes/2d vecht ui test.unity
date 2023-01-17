@@ -1715,7 +1715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &379785482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3851,7 +3851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &794196661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5619,7 +5619,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1715431898}
         m_TargetAssemblyTypeName: recruitment, Assembly-CSharp
-        m_MethodName: Bribe
+        m_MethodName: bribeRT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7704,8 +7704,6 @@ MonoBehaviour:
   LinkerRecruitText: {fileID: 764685356}
   LinkerMainText: {fileID: 0}
   randomName: 
-  tacklrRT: {fileID: 0}
-  PunchRT: {fileID: 0}
   BribeRT: {fileID: 406841641}
   convinceRT: {fileID: 1543155611}
   Enemystation: {fileID: 509054857}

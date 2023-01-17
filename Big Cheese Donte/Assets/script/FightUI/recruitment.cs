@@ -10,13 +10,11 @@ public class recruitment : FightUI
 {
     //andere scripts
     moves move;
-    ICollectible col;
+    //ICollectible col;
     Unit u;
     shopmaster shopm;
 
     //recruit options
-    public GameObject tacklrRT;
-    public GameObject PunchRT;
     public GameObject BribeRT;
     public GameObject convinceRT;
 
@@ -67,27 +65,30 @@ public class recruitment : FightUI
 
     public void Bribe()
     {
+        // every 10% chance that the enemy can recruit  
         for (int i = 10; i < geld ;i += 10 )
         {
             bribeChance++;
-
-            if ()
-            {
-
-            }
         }
 
-        if (bribeChance++ > 50)
+
+
+    }
+
+    public void bribeRT()
+    {
+        if (bribeChance > 50 || bribeChance == 50)
         {
-            
+            // is join the c
             switchScene();
+            StartCoroutine("switchScene");
+            print("join de groep");
         }
         else
         {
             //no 
             print("no");
         }
-
     }
 
     public void geldErop()
@@ -118,6 +119,7 @@ public class recruitment : FightUI
             teamMember.Add(GameObject.Find("enemy"));
             Enemystation.GetComponent<Unit>();
             switchScene();
+            StartCoroutine("switchScene");
 
         }
 
