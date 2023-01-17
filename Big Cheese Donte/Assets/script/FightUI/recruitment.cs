@@ -10,6 +10,7 @@ public class recruitment : FightUI
 {
     //andere scripts
     moves move;
+
     //ICollectible col;
     Unit u;
     shopmaster shopm;
@@ -41,6 +42,7 @@ public class recruitment : FightUI
 
 
     public List<GameObject> teamMember = new List<GameObject>();
+    public GameObject[] TeamMember;
 
     //text 
     public TMP_Text LeftRecruitTextt;
@@ -118,6 +120,7 @@ public class recruitment : FightUI
             teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
             teamMember.Add(GameObject.Find("enemy"));
             Enemystation.GetComponent<Unit>();
+            TeamMember = teamMember.ToArray(); 
             switchScene();
             StartCoroutine("switchScene");
 
@@ -151,7 +154,7 @@ public class recruitment : FightUI
         yield return new WaitForSeconds(2f);
        // LeftRecruitTextt.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
 
-        teamMember.Add(GameObject.Find("enemy"));
+        teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
 
         yield return new WaitForSeconds(2f);
 
