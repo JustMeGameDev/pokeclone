@@ -16,6 +16,9 @@ public class fightwithTeamma : MonoBehaviour
 
     public int chosenTeam;
 
+    //public GameObject[] vakjes;
+    //public bool empty = true;
+
    
     // Start is called before the first frame update
     void Start()
@@ -27,12 +30,19 @@ public class fightwithTeamma : MonoBehaviour
 
     void SetImages()
     {
-        for(int i = 0; i < team.Length; i++)
-        {
-            GameObject currentFound = rec.teamMember[i];
-            SpriteRenderer currentImage = currentFound.GetComponent<SpriteRenderer>();
-            team[i].GetComponent<Image>().sprite = currentImage.sprite;
-        }
+        
+         
+            for(int i = 0; i < team.Length; i++)
+            {
+                GameObject currentFound = rec.teamMember[i];
+                SpriteRenderer currentImage = currentFound.GetComponent<SpriteRenderer>();
+                team[i].GetComponent<Image>().sprite = currentImage.sprite;
+                
+            }
+
+        
+       
+       
     }
     // Update is called once per frame
     public void Update()
