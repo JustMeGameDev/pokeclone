@@ -42,7 +42,7 @@ public class recruitment : FightUI
 
 
     public List<GameObject> teamMember = new List<GameObject>();
-    public GameObject[] TeamMember;
+   // public GameObject[] TeamMember;
 
     //text 
     public TMP_Text LeftRecruitTextt;
@@ -120,7 +120,7 @@ public class recruitment : FightUI
             teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
             teamMember.Add(GameObject.Find("enemy"));
             Enemystation.GetComponent<Unit>();
-            TeamMember = teamMember.ToArray(); 
+             
             switchScene();
             StartCoroutine("switchScene");
 

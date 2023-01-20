@@ -8,6 +8,7 @@ TagManager:
   - volume
   - player
   - enemy
+  - ActiveMember
   layers:
   - Default
   - TransparentFX
