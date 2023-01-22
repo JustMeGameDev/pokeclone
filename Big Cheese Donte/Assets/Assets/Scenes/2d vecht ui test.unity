@@ -1243,7 +1243,6 @@ MonoBehaviour:
   - {fileID: 1199890171}
   - {fileID: 555991709}
   ScriptUI: {fileID: 1715431892}
-  scrollview: {fileID: 277834569}
   chosenTeam: 0
 --- !u!1 &285988930
 GameObject:
@@ -2673,7 +2672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509054857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 267, y: 113, z: -17.35696}
+  m_LocalPosition: {x: 577, y: 113, z: -17.35696}
   m_LocalScale: {x: 2.4413872, y: 2.4413872, z: 2.4413872}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3004,7 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3620,7 +3619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6520,7 +6519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7457,7 +7456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471479627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -463, y: -54, z: -17.35696}
+  m_LocalPosition: {x: -463, y: -93, z: -3}
   m_LocalScale: {x: 2.4413872, y: 2.4413872, z: 2.4413872}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8517,11 +8516,7 @@ MonoBehaviour:
   WantToTeamUp: 2
   refuse: 0
   Gift: {fileID: 1161527263}
-  teamMember:
-  - {fileID: 3412163705258353680, guid: 5c90e1b6e6aeaec4eb949a4e875dddcd, type: 3}
-  - {fileID: 2221901190916023109, guid: 2727d8f1f909a9348896e337bd896ca8, type: 3}
-  - {fileID: 6889424843728484366, guid: 5229ab211f7615a4aaa7a061eeca6d78, type: 3}
-  - {fileID: 5633837739786888061, guid: 2d4afb17f598d2f4c82f5aa5edabcb44, type: 3}
+  teamMember: []
   LeftRecruitTextt: {fileID: 0}
 --- !u!1 &1734508063
 GameObject:
@@ -8709,7 +8704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

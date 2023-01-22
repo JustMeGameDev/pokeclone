@@ -118,7 +118,7 @@ public class recruitment : FightUI
         {
             //wel joinen
             teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
-            teamMember.Add(GameObject.Find("enemy"));
+            teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
             Enemystation.GetComponent<Unit>();
              
             switchScene();
@@ -131,7 +131,7 @@ public class recruitment : FightUI
 
     public IEnumerator switchScene()
     {
-        teamMember.Add(GameObject.Find("enemy"));
+        teamMember.Add(GameObject.FindWithTag("enemy"));
 
         yield return new WaitForSeconds(2f);
 
@@ -154,7 +154,7 @@ public class recruitment : FightUI
         yield return new WaitForSeconds(2f);
        // LeftRecruitTextt.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
 
-        teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+        teamMember.Add(GameObject.FindWithTag("enemy"));
 
         yield return new WaitForSeconds(2f);
 

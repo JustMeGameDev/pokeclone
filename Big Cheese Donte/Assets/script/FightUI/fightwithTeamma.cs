@@ -12,7 +12,7 @@ public class fightwithTeamma : MonoBehaviour
 
     public GameObject ScriptUI;
     recruitment rec;
-    public GameObject scrollview;
+   // public GameObject scrollview;
 
     public int chosenTeam;
 
@@ -28,7 +28,7 @@ public class fightwithTeamma : MonoBehaviour
         SetImages();
     }
 
-    void SetImages()
+    public void SetImages()
     {
         
          
@@ -37,28 +37,18 @@ public class fightwithTeamma : MonoBehaviour
                 GameObject currentFound = rec.teamMember[i];
                 SpriteRenderer currentImage = currentFound.GetComponent<SpriteRenderer>();
                 team[i].GetComponent<Image>().sprite = currentImage.sprite;
-                
+                team[i] = Instantiate(rec.teamMember[i]);
+
+                 
             }
 
-        
-       
-       
     }
     // Update is called once per frame
     public void Update()
     {
-        
-
-        /*GameObject currentFound = rec.teamMember[rec.teamMember.Count -1];
-        SpriteRenderer currentImage = currentFound.GetComponent<SpriteRenderer>();
-        team[0].GetComponent<Image>().sprite = currentImage.sprite;
-        team[1].GetComponent<Image>().sprite = currentImage.sprite;
-        team[2].GetComponent<Image>().sprite = currentImage.sprite;
-        team[3].GetComponent<Image>().sprite = currentImage.sprite;*/
-
-        
-       
+         SetImages();  
     }
+
 
     public void TeamMateInZetten(int TeamNumber)
     {
