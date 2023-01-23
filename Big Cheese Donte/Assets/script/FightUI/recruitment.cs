@@ -135,7 +135,7 @@ public class recruitment : FightUI
 
         yield return new WaitForSeconds(2f);
 
-        //SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene);
     }
 
     public void smart()
@@ -158,7 +158,7 @@ public class recruitment : FightUI
 
         yield return new WaitForSeconds(2f);
 
-       // SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene);
     
     }
 
