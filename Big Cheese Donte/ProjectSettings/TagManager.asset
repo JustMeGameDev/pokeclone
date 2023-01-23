@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - DataHandler
+  - SpawnEnemy
+  - volume
+  - player
+  - enemy
+  - ActiveMember
   layers:
   - Default
   - TransparentFX

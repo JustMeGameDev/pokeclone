@@ -16,7 +16,8 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
 
     public GameObject playerprefab;
-    public GameObject enemyprefab;
+    public GameObject[] enemyprefab;
+    public GameObject playerGo;
 
     public Transform playerstation;
     public Transform enemystation;
@@ -34,10 +35,12 @@ public class BattleSystem : MonoBehaviour
     int ShootUsesLeft = 6;
     int TortureUsesLeft = 2;
 
+  
 
 
     private void Start()
     {
+        
         FUI = GetComponent<FightUI>();
         move = GetComponent<moves>();
         state = BattleState.START;
@@ -46,11 +49,15 @@ public class BattleSystem : MonoBehaviour
 
 
 
-    IEnumerator SetupBattle()
+    public IEnumerator SetupBattle()
     {
-        GameObject playerGo = Instantiate(playerprefab, playerstation);
+        
+        
+
+
+        playerGo = Instantiate(playerprefab, playerstation);
         playerunit = playerGo.GetComponent<Unit>();
-        GameObject enemyGo = Instantiate(enemyprefab, enemystation);
+        GameObject enemyGo = Instantiate(enemyprefab[Random.Range(0, enemyprefab.Length)], enemystation);
         enemyunit = enemyGo.GetComponent<Unit>();
 
 

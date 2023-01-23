@@ -98,7 +98,7 @@ public class moves : MonoBehaviour
         FUI.GoBackFight();
         FUI.GoBackItems();
         FUI.GoBackRecruit();
-        //                                                    V kan je plus of min doen ivm welke move het is
+        //   V kan je plus of min doen ivm welke move het is
         bool isDead = bs.enemyunit.TakeDamage(bs.playerunit.damage * 10/7);
 
         bs.enemyHUD.SetHP(bs.enemyunit.currentHP);
