@@ -6,7 +6,8 @@ public class EntShopScript : MonoBehaviour
 {
     public GameObject ShopCanvas;
     public GameObject ShopCam;
-    public GameObject PlayerCam; 
+    public GameObject PlayerCam;
+
 
     void Start()
     {
