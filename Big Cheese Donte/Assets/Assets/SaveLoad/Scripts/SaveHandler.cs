@@ -2,58 +2,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+public class SaveHandler : MonoBehaviour 
+{
 
-public class SaveHandler : MonoBehaviour {
+    public Vector3 playerPos;
+    public Gamdata gamedata = new Gamdata();
+    public GameObject Player;
 
-   
-    public GameData gameData;
-
-    public void Awake() {
-        gameData = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<GameData>();
-        
+    private void Awake()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.K)) {
+    //public SaveObject saveObject;
+    private void FixedUpdate() 
+    {
+        if (Input.GetKeyDown(KeyCode.K)) 
+        {
             Save();
         }
 
-        if (Input.GetKeyDown(KeyCode.L)) {
+        if (Input.GetKeyDown(KeyCode.L)) 
+        {
             Load();
         }
-    }
+        //auto-save function
 
+        //SaveTimer = SaveTimer - 0.02f;
+
+        //if (SaveTimer <= 0)
+        //{
+        //    print("AutoSave");
+        //    SaveTimer = 300f;
+
+        //    Save();
+        //}
+    
+    }
+    
     private void Save() {
         // Save
-
-
-        SaveObject saveObject = new SaveObject {
-            Testt = "rewrite",
-            test = 420,
-        }; 
-        string json = JsonUtility.ToJson(saveObject);
+        gamedata.playerposition = Player.transform.position;
+        
+        string json = JsonUtility.ToJson(gamedata);
         SaveSystem.Save(json);
 
         print("Saved!");
     }
 
-    private void Load() {
+    private void Load() 
+    {
         // Load
         string saveString = SaveSystem.Load();
         if (saveString != null) {
             print("Loaded: " + saveString);
+            gamedata = JsonUtility.FromJson<Gamdata>(saveString);
 
-            SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
-
-           
+            Player.transform.position = gamedata.playerposition;
         } else {
             print("No save");
         }
     }
 
-
-    public class SaveObject {
-        public int test;
-        public string Testt;
+    [System.Serializable]
+    public class Gamdata
+    {
+        public Vector3 playerposition;
+        public int money;
+        public Dictionary<Inventorydata, inventoryitem> itemData;
     }
 }
