@@ -30,8 +30,9 @@ public class fightwithTeamma : MonoBehaviour
 
     public void SetImages()
     {
-        
-         
+        try
+        {
+
             for(int i = 0; i < team.Length; i++)
             {
                 GameObject currentFound = rec.teamMember[i];
@@ -41,7 +42,11 @@ public class fightwithTeamma : MonoBehaviour
 
                  
             }
+        }
+        catch
+        {
 
+        }
     }
     // Update is called once per frame
     public void Update()
