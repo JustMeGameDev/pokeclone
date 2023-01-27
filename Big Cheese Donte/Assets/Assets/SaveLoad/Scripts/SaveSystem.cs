@@ -21,8 +21,21 @@ public static class SaveSystem {
 
         }
         // saveNumber is unique
-        File.WriteAllText(SAVE_FOLDER + "README"+ "." + SAVE_EXTENSION, saveUtil.encrypt(saveString));
+        File.WriteAllText(SAVE_FOLDER + "README"+ "." + SAVE_EXTENSION, saveString);
         
+    }
+    public static void SaveTeam(string saveString)
+    {
+        if (!Directory.Exists(SAVE_FOLDER))
+        {
+            // Create Save Folder
+            Directory.CreateDirectory(SAVE_FOLDER);
+
+        }
+        // saveNumber is unique
+       // File.WriteAllText(SAVE_FOLDER + "Enemy" + "." + SAVE_EXTENSION, saveUtil.encrypt(saveString));
+        File.WriteAllText(SAVE_FOLDER + "Enemy" + "." + SAVE_EXTENSION, saveString);
+
     }
 
 
@@ -33,7 +46,22 @@ public static class SaveSystem {
         {
 
             string saveString = File.ReadAllText(SAVE_FOLDER + "README" + "." + SAVE_EXTENSION);
-            return saveUtil.decrypt(saveString);
+            return saveString;
+
+        }
+        // Get save file
+        return default;
+
+
+    }
+    public static string LoadTeam()
+    {
+        if (Directory.Exists(SAVE_FOLDER) && File.Exists(SAVE_FOLDER + "Enemy" + "." + SAVE_EXTENSION))
+        {
+
+            string saveString = File.ReadAllText(SAVE_FOLDER + "Enemy" + "." + SAVE_EXTENSION);
+            return saveString;
+            //return saveUtil.decrypt(saveString);
 
         }
         // Get save file
@@ -42,6 +70,6 @@ public static class SaveSystem {
 
     }
 
-    
+
 
 }

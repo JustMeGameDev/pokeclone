@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 
 public class recruitment : FightUI
@@ -12,7 +13,7 @@ public class recruitment : FightUI
     moves move;
 
     //ICollectible col;
-    Unit u;
+    public Unit enemy;
     shopmaster shopm;
 
     //recruit options
@@ -42,7 +43,9 @@ public class recruitment : FightUI
 
 
     public List<GameObject> teamMember = new List<GameObject>();
-   // public GameObject[] TeamMember;
+    public GameObject[] TeamMember;
+    public SaveHandler.Enemystats enemystats;
+    public SaveHandler save;
 
     //text 
     public TMP_Text LeftRecruitTextt;
@@ -51,18 +54,26 @@ public class recruitment : FightUI
     List<string> enemyTalk = new List<string> { "\"ait sure\"" };
 
 
+    private void OnLevelWasLoaded(int level)
+    {
+        teamMember = TeamMember.ToList();
+        enemystats = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler.Enemystats>();
+        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+        enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Unit>();
+    }
     private void Start()
     {
-        shopm = GetComponent<shopmaster>();
+        shopm = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
 
         shopm.money = geld;
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     private void Update()
     {
-        geldText.text = geld.ToString(); 
+        geldText.text = geld.ToString();
         //Debug.Log("work");
+        TeamMember = teamMember.ToArray();
     }
 
     public void Bribe()
@@ -82,7 +93,7 @@ public class recruitment : FightUI
         if (bribeChance > 50 || bribeChance == 50)
         {
             // is join the c
-            switchScene();
+            recruit();
             StartCoroutine("switchScene");
             print("join de groep");
         }
@@ -121,47 +132,40 @@ public class recruitment : FightUI
             teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
             Enemystation.GetComponent<Unit>();
              
-            switchScene();
+            recruit();
             StartCoroutine("switchScene");
 
         }
 
 
     }
+    public void recruit()
+    {
+        /*enemystats.names.Add(enemy.name);
+        enemystats.Levels.Add(enemy.unitLevelEnemy);
+        enemystats.damages.Add(enemy.damage);
+        enemystats.maxHP.Add(enemy.maxHP);
+        enemystats.curHP.Add(enemy.currentHP);*/
+        //enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
+        save.enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
+        save.Save();
+        SceneManager.LoadScene(scene);
+    }
 
     public IEnumerator switchScene()
     {
-        teamMember.Add(GameObject.FindWithTag("enemy"));
+        
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         SceneManager.LoadScene(scene);
     }
 
     public void smart()
     {
-        SmartRT();
-        StartCoroutine("SmartRT");
+        recruit();
         print("works");
     }
-
-    public IEnumerator SmartRT()
-    {
-        print("Smart manier");
-            //niet joinen
-       // LeftRecruitTextt.text = randomName + smartTalk[Random.Range(0, smartTalk.Count)];
-       
-        yield return new WaitForSeconds(2f);
-       // LeftRecruitTextt.text = randomName + enemyTalk[Random.Range(0, enemyTalk.Count)];
-
-        teamMember.Add(GameObject.FindWithTag("enemy"));
-
-        yield return new WaitForSeconds(2f);
-
-        SceneManager.LoadScene(scene);
-    
-    }
-
 
    
 }

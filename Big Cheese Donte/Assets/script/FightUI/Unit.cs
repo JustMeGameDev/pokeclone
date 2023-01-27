@@ -20,11 +20,13 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+  
+  
     
-    
+
     private void Awake()
     {
-
+        DontDestroyOnLoad(gameObject);
 
         if (CompareTag("enemy"))
         {

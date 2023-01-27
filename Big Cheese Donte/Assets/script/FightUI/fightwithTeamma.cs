@@ -15,11 +15,16 @@ public class fightwithTeamma : MonoBehaviour
    // public GameObject scrollview;
 
     public int chosenTeam;
+    public SaveHandler save;
 
     //public GameObject[] vakjes;
     //public bool empty = true;
 
-   
+    private void OnLevelWasLoaded(int level)
+    {
+        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+        fillTeam();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,7 @@ public class fightwithTeamma : MonoBehaviour
         rec = ScriptUI.GetComponent<recruitment>();
         SetImages();
     }
-
+    
     public void SetImages()
     {
         try
@@ -54,36 +59,46 @@ public class fightwithTeamma : MonoBehaviour
          SetImages();  
     }
 
+    public void fillTeam()
+    {
+        save.Load();
+        save.enemystats.enemys.CopyTo(team);
+    }
+
 
     public void TeamMateInZetten(int TeamNumber)
     {
-        print("je ben prosses");
 
-        //als de team member niet active is destory object
-        if(GameObject.FindGameObjectWithTag("ActiveMember") != null)
-        { 
-            Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
-        }
-        //
-        GameObject playerGo = Instantiate(rec.teamMember[TeamNumber],BS.playerstation.transform);
-        playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
-        playerGo.tag = "ActiveMember";
-        BS.playerunit = playerGo.GetComponent<Unit>();
 
-        inzetten(TeamNumber);
-        print("click");
-        StartCoroutine("inzetten",TeamNumber);
+
+        
+        //print("je ben in prosses");
+
+        ////als de team member niet active is destory object
+        //if(GameObject.FindGameObjectWithTag("ActiveMember") != null)
+        //{ 
+        //    Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
+        //}
+        ////
+        //GameObject playerGo = Instantiate(rec.teamMember[TeamNumber],BS.playerstation.transform);
+        //playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
+        //playerGo.tag = "ActiveMember";
+        //BS.playerunit = playerGo.GetComponent<Unit>();
+
+        //inzetten(TeamNumber);
+        //print("click");
+        //StartCoroutine("inzetten",TeamNumber);
     }
 
-    public IEnumerator inzetten(int team)
-    {
-        print("works");
-        BS.playerGo.SetActive(false);
+   // public IEnumerator inzetten(int team)
+    //{
+        //print("works");
+        //BS.playerGo.SetActive(false);
 
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
-        rec.teamMember[team].SetActive(true);
-        print("needs to be");
-    }
+        //rec.teamMember[team].SetActive(true);
+        //print("needs to be");
+    //}
     
 }

@@ -42,12 +42,7 @@ public class Encounter : MonoBehaviour
 			done = true;
 		}
 		
-		else if (Zone.CompareTag("Encounter test"))
-		{
-			encounter = true;
-			area = "Encounter test";
-			print("spawn test");
-		}
+		
 		
 	}
 
@@ -66,10 +61,7 @@ public class Encounter : MonoBehaviour
             }
 		}
 
-		else if (Zone.CompareTag("Encounter test"))
-		{
-			transition.transition = true;
-		}
+		
 	}
 	
 	private void Timer()

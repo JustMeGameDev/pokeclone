@@ -10,6 +10,11 @@ TagManager:
   - player
   - enemy
   - ActiveMember
+  - pauze
+  - Encounter
+  - floor
+  - ShopManager
+  - Uiscripts
   layers:
   - Default
   - TransparentFX

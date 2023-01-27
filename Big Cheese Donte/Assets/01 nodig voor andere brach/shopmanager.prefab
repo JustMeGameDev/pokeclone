@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5710910446028079776}
   m_Layer: 0
   m_Name: shopmanager
-  m_TagString: Untagged
+  m_TagString: ShopManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   denyBandage: {fileID: 0}
-  denydildo: {fileID: 0}
   denyAlcohol: {fileID: 0}
   DenyCocaine: {fileID: 0}
-  Denyplaceholder: {fileID: 0}
+  money: 100
   moneytext: {fileID: 0}
+  moneytextShop: {fileID: 0}
   shopwindow: {fileID: 0}
   BandageCost: 10
   alcoholCost: 15
