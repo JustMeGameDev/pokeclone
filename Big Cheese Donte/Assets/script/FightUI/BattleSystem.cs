@@ -52,9 +52,6 @@ public class BattleSystem : MonoBehaviour
     public IEnumerator SetupBattle()
     {
 
-
-
-
         GameObject playerGo = Instantiate(playerprefab, playerstation);
         playerunit = playerGo.GetComponent<Unit>();
         GameObject enemyGo = Instantiate(enemyprefab[Random.Range(0, enemyprefab.Length)], enemystation);

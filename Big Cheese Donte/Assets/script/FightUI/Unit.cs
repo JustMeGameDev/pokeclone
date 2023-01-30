@@ -26,7 +26,7 @@ public class Unit : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
 
         if (CompareTag("enemy"))
         {

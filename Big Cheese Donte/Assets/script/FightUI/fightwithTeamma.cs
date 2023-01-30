@@ -17,9 +17,6 @@ public class fightwithTeamma : MonoBehaviour
     public int chosenTeam;
     public SaveHandler save;
 
-    //public GameObject[] vakjes;
-    //public bool empty = true;
-
     private void OnLevelWasLoaded(int level)
     {
         save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
@@ -56,7 +53,8 @@ public class fightwithTeamma : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-         SetImages();  
+         SetImages();
+        
     }
 
     public void fillTeam()
@@ -69,14 +67,12 @@ public class fightwithTeamma : MonoBehaviour
     public void TeamMateInZetten(int TeamNumber)
     {
 
-
-
-
         print("je ben in prosses");
 
        // als de team member niet active is destory object
         if (GameObject.FindGameObjectWithTag("ActiveMember") != null)
         {
+            print("Character verwisselt");
             Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
         }
         GameObject playerGo = Instantiate(rec.teamMember[TeamNumber], BS.playerstation.transform);
