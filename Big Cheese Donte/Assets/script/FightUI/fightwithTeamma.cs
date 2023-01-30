@@ -71,34 +71,33 @@ public class fightwithTeamma : MonoBehaviour
 
 
 
-        
-        //print("je ben in prosses");
 
-        ////als de team member niet active is destory object
-        //if(GameObject.FindGameObjectWithTag("ActiveMember") != null)
-        //{ 
-        //    Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
-        //}
-        ////
-        //GameObject playerGo = Instantiate(rec.teamMember[TeamNumber],BS.playerstation.transform);
-        //playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
-        //playerGo.tag = "ActiveMember";
-        //BS.playerunit = playerGo.GetComponent<Unit>();
+        print("je ben in prosses");
 
-        //inzetten(TeamNumber);
-        //print("click");
-        //StartCoroutine("inzetten",TeamNumber);
+       // als de team member niet active is destory object
+        if (GameObject.FindGameObjectWithTag("ActiveMember") != null)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
+        }
+        GameObject playerGo = Instantiate(rec.teamMember[TeamNumber], BS.playerstation.transform);
+        playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
+        playerGo.tag = "ActiveMember";
+        BS.playerunit = playerGo.GetComponent<Unit>();
+
+        inzetten(TeamNumber);
+        print("click");
+        StartCoroutine("inzetten", TeamNumber);
     }
 
-   // public IEnumerator inzetten(int team)
-    //{
-        //print("works");
-        //BS.playerGo.SetActive(false);
+    public IEnumerator inzetten(int team)
+    {
+        print("works");
+      //  BS.playerGo.SetActive(false);
 
-        //yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
 
-        //rec.teamMember[team].SetActive(true);
-        //print("needs to be");
-    //}
-    
+        rec.teamMember[team].SetActive(true);
+        print("needs to be");
+    }
+
 }

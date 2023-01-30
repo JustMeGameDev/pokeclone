@@ -17,7 +17,7 @@ public class BattleSystem : MonoBehaviour
 
     public GameObject playerprefab;
     public GameObject[] enemyprefab;
-    public GameObject playerGo;
+    //public  playerGo;
 
     public Transform playerstation;
     public Transform enemystation;
@@ -51,11 +51,11 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator SetupBattle()
     {
-        
-        
 
 
-        playerGo = Instantiate(playerprefab, playerstation);
+
+
+        GameObject playerGo = Instantiate(playerprefab, playerstation);
         playerunit = playerGo.GetComponent<Unit>();
         GameObject enemyGo = Instantiate(enemyprefab[Random.Range(0, enemyprefab.Length)], enemystation);
         enemyunit = enemyGo.GetComponent<Unit>();
