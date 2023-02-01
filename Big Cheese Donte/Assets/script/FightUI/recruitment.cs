@@ -150,15 +150,16 @@ public class recruitment : FightUI
     }
     public void recruit()
     {
-        /*enemystats.names.Add(enemy.name);
-        enemystats.Levels.Add(enemy.unitLevelEnemy);
-        enemystats.damages.Add(enemy.damage);
-        enemystats.maxHP.Add(enemy.maxHP);
-        enemystats.curHP.Add(enemy.currentHP);*/
+        teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+        //enemystats.names.Add(enemy.name);
+        //enemystats.Levels.Add(enemy.unitLevelEnemy);
+        //enemystats.damages.Add(enemy.damage);
+        //enemystats.maxHP.Add(enemy.maxHP);
+        //enemystats.curHP.Add(enemy.currentHP);
         //enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
-        save.enemystats.enemys[0] = GameObject.FindGameObjectWithTag("Enemy");
-        save.Save();
-        SceneManager.LoadScene(scene);
+        //save.enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
+        //save.Save();
+        //  SceneManager.LoadScene(scene);
     }
 
     public IEnumerator switchScene()
