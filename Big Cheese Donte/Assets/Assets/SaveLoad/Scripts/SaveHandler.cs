@@ -19,6 +19,7 @@ public class SaveHandler : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         GameObject[] objs = GameObject.FindGameObjectsWithTag("DataHandler");
 
+
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
@@ -138,14 +139,7 @@ public class SaveHandler : MonoBehaviour
 
     [System.Serializable]
 
-    public class Enemystats
+    public class Enemystats : MonoBehaviour
     {
-        /*public List<string> names;
-        public List<int> Levels;
-        public List<int> damages;
-        public List<int> maxHP;
-        public List<int> curHP;*/
-
-        public List<GameObject> enemys;
     }
 }

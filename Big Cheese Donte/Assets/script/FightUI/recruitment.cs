@@ -56,13 +56,15 @@ public class recruitment : FightUI
 
     private void OnLevelWasLoaded(int level)
     {
-        teamMember = TeamMember.ToList();
-        enemystats = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler.Enemystats>();
-        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
-        enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Unit>();
+        //enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Unit>();
+        //enemy = GameObject.Find("enemy").GetComponent<Unit>();
     }
     private void Start()
     {
+        teamMember = TeamMember.ToList();
+        enemystats = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler.Enemystats>();
+        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Unit>();
         shopm = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
 
         shopm.money = geld;
@@ -128,8 +130,15 @@ public class recruitment : FightUI
         else
         {
             //wel joinen
+            GameObject teamMemberStorage = GameObject.FindGameObjectWithTag("Enemy");
+            print(teamMemberStorage);
+            if (teamMemberStorage == null)
+            {
+                print("No gameobject with that tag!");
+            }
             teamMember.Add(Enemystation.GetComponentInChildren<GameObject>());
-            teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
+            teamMember.Add(GameObject.FindGameObjectWithTag("Enemy").GetComponent<GameObject>());
+            
             Enemystation.GetComponent<Unit>();
              
             recruit();
@@ -147,7 +156,7 @@ public class recruitment : FightUI
         enemystats.maxHP.Add(enemy.maxHP);
         enemystats.curHP.Add(enemy.currentHP);*/
         //enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
-        save.enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
+        save.enemystats.enemys[0] = GameObject.FindGameObjectWithTag("Enemy");
         save.Save();
         SceneManager.LoadScene(scene);
     }
@@ -158,7 +167,6 @@ public class recruitment : FightUI
 
         yield return new WaitForSeconds(4f);
 
-        SceneManager.LoadScene(scene);
     }
 
     public void smart()

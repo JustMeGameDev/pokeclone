@@ -22,12 +22,12 @@ public class fightwithTeamma : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
-        fillTeam();
     }
     // Start is called before the first frame update
     void Start()
     {
+        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+        fillTeam();
         BS = GameObject.Find("ui scripts").GetComponent<BattleSystem>();
         rec = ScriptUI.GetComponent<recruitment>();
         SetImages();
@@ -62,7 +62,8 @@ public class fightwithTeamma : MonoBehaviour
     public void fillTeam()
     {
         save.Load();
-        save.enemystats.enemys.CopyTo(team);
+        //print(save.enemystats.enemys);
+        //team = save.enemystats.enemys;
     }
 
 

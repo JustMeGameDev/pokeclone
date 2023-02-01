@@ -20,13 +20,33 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
-  
-  
-    
+    public string[] names ={
+            "Niels",
+            "Jesper",
+            "Arjen",
+            "Raygen",
+            "Kornee",
+            "Thijs",
+            "Finn",
+            "Driss",
+            "Adi",
+            "Rene",
+            "Ids",
+            "Jarno",
+            "Fatman",
+            "Franciesco",
+            "Marcello",
+        };
+    private void OnLevelWasLoaded(int level)
+    {
+       
+    }
+
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+       
 
         if (CompareTag("enemy"))
         {

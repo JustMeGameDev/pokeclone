@@ -8,13 +8,13 @@ TagManager:
   - SpawnEnemy
   - volume
   - player
-  - enemy
   - ActiveMember
   - pauze
   - Encounter
   - floor
   - ShopManager
   - Uiscripts
+  - Enemy
   layers:
   - Default
   - TransparentFX
