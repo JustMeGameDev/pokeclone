@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.UI;
+
 
 public class Unit : MonoBehaviour
 {
     FightUI fui;
+    EnemyID enemyID;
 
     [Header("tussen welke level moet de enmy zijn")]
     public int LvlRangeMin;
@@ -19,6 +23,9 @@ public class Unit : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
+    public bool NEW = true;
+    public Sprite[] sprites;
+    public Sprite Currentsprite;
 
     public string[] names ={
             "Niels",
@@ -35,40 +42,60 @@ public class Unit : MonoBehaviour
             "Jarno",
             "Fatman",
             "Franciesco",
-            "Marcello",
+            "Marcello"
         };
-    private void OnLevelWasLoaded(int level)
-    {
-       
-    }
-
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-       
+        enemyID = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<EnemyID>();
 
-        if (CompareTag("enemy"))
+        if (NEW)
         {
-            unitLevelEnemy = Random.Range(LvlRangeMin, LvlRangeMax);
-            unitLevel = unitLevelEnemy;
-            for (int i = 0; i < unitLevelEnemy; i++)
+            if (CompareTag("ActiveMember_Enemy"))
             {
-                damage++;
-                maxHP++;
-                currentHP++;
+                unitLevelEnemy = Random.Range(LvlRangeMin, LvlRangeMax);
+                unitLevel = unitLevelEnemy;
+                unitName = names[Random.Range(0, 15)];
+                for (int i = 0; i < unitLevelEnemy; i++)
+                {
+                    damage++;
+                    maxHP++;
+                    currentHP++;
+                }
+            }
+            else if (CompareTag("ActiveMember_Player"))
+            {
+                for (int i = 0; i < unitLevel; i++)
+                {
+                    damage++;
+                    maxHP++;
+                    currentHP++;
+                }
+
             }
         }
-        else if (CompareTag("player"))
+        else
         {
-            for (int i = 0; i < unitLevel; i++)
+            enemyID.StringReader();
+            string search = enemyID.name;
+            foreach (string s in names)
             {
-                damage++;
-                maxHP++;
-                currentHP++;
-            }
+                if (s.Length >= 2 && s.Substring(0, 2).Equals(search, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    unitName = s;
+                    print($"{s} | {unitName}");
+                }
 
+            }
+            unitLevel = enemyID.Level;
+            damage = enemyID.Damage;
+            currentHP = enemyID.CurHP;
+            maxHP = enemyID.MaxHP;
+            Image image = GetComponent<Image>();
+            Currentsprite = sprites[enemyID.Sprite];
+            image.sprite = Currentsprite;
         }
+      
 
         
         

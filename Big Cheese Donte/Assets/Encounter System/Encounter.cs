@@ -44,6 +44,7 @@ public class Encounter : MonoBehaviour
 		
 		
 		
+		
 	}
 
 	private void OnTriggerStay(Collider Zone)

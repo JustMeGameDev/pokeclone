@@ -27,14 +27,14 @@ public class shopmaster : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        moneytext.text = money.ToString();
-        moneytextShop.text = money.ToString();
+     //   moneytext.text = money.ToString();
+       // moneytextShop.text = money.ToString();
         Instance = this;
     }
     public void MoneyCheck()
     {
-        moneytext.text = money.ToString();
-        moneytextShop.text = money.ToString();
+       // moneytext.text = money.ToString();
+        //moneytextShop.text = money.ToString();
     }
     private void Update()
     {

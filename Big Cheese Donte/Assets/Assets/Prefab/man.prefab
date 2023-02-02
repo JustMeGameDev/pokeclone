@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7592523195523835178}
   m_Layer: 5
   m_Name: man
-  m_TagString: ActiveMember
+  m_TagString: ActiveMember_Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,6 +59,22 @@ MonoBehaviour:
   damage: 14
   maxHP: 100
   currentHP: 100
+  names:
+  - Niels
+  - Jesper
+  - Arjen
+  - Raygen
+  - Kornee
+  - Thijs
+  - Finn
+  - Driss
+  - Adi
+  - Rene
+  - Ids
+  - Jarno
+  - Fatman
+  - Franciesco
+  - Marcello
 --- !u!222 &7657657396951420127
 CanvasRenderer:
   m_ObjectHideFlags: 0

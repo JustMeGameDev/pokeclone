@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3790374084986731667}
   m_Layer: 5
   m_Name: enemy
-  m_TagString: ActiveMember
+  m_TagString: ActiveMember_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,14 +51,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd9158927ca38f44abf8e490326c5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LvlRangeMin: 1
+  LvlRangeMin: 10
   LvlRangeMax: 100
   unitName: 
   unitLevel: 13
   unitLevelEnemy: 15
-  damage: 5
+  damage: 0
   maxHP: 100
   currentHP: 100
+  NEW: 1
+  names:
+  - Niels
+  - Jesper
+  - Arjen
+  - Raygen
+  - Kornee
+  - Thijs
+  - Finn
+  - Driss
+  - Adi
+  - Rene
+  - Ids
+  - Jarno
+  - Fatman
+  - Franciesco
+  - Marcello
 --- !u!222 &5830699366934028318
 CanvasRenderer:
   m_ObjectHideFlags: 0

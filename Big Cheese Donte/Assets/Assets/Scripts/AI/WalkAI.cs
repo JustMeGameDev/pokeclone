@@ -28,7 +28,8 @@ public class WalkAI : MonoBehaviour
 
     void Start()
     {
-        textelement.text = Textvalue;
+        Textvalue = "I dont like you cause you do not have a cool hat like me";
+        textelement = GameObject.FindGameObjectWithTag("AI").GetComponent<TextMeshProUGUI>();
         agent = GetComponent<NavMeshAgent>();
         UpdateDes();
         Npctimerbool = false;
@@ -38,7 +39,8 @@ public class WalkAI : MonoBehaviour
 
     void Update()
     {
-        textelement.text = Textvalue;
+
+        textelement = GetComponent<TextMeshPro>();
         if (Vector3.Distance(transform.position, target) < 1)
         {
 
@@ -51,7 +53,7 @@ public class WalkAI : MonoBehaviour
             
             agent.enabled = false;
             NPCtimer -= Time.deltaTime;
-            Textcanv.SetActive(true);
+            textelement.text = Textvalue;
             Player.GetComponent<Movement>().enabled = false;
             transform.LookAt(Player.transform);
             if (NPCtimer <= 0f)
@@ -97,7 +99,7 @@ public class WalkAI : MonoBehaviour
     {
         ITWwaypointIndex();
         UpdateDes();
-        Textcanv.SetActive(false);
+        textelement.text = "";
         Crosshaircanv.SetActive(true);
         Player.GetComponent<Movement>().enabled = true;
 

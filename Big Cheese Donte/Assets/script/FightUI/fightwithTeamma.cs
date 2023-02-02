@@ -9,6 +9,7 @@ public class fightwithTeamma : MonoBehaviour
     public GameObject[] team;
 
     BattleSystem BS;
+    public GameObject teammate;
 
     public GameObject ScriptUI;
     recruitment rec;
@@ -16,10 +17,6 @@ public class fightwithTeamma : MonoBehaviour
 
     public int chosenTeam;
     public SaveHandler save;
-
-    private void OnLevelWasLoaded(int level)
-    {
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +34,9 @@ public class fightwithTeamma : MonoBehaviour
 
             for(int i = 0; i < team.Length; i++)
             {
-                GameObject currentFound = rec.teamMember[i];
-                SpriteRenderer currentImage = currentFound.GetComponent<SpriteRenderer>();
-                team[i].GetComponent<Image>().sprite = currentImage.sprite;
+                Unit temp = teammate.GetComponent<Unit>();
+                Sprite currentImage = temp.Currentsprite;
+                team[i].GetComponent<Image>().sprite = currentImage;
                 team[i] = Instantiate(rec.teamMember[i]);
 
                  
@@ -71,14 +68,14 @@ public class fightwithTeamma : MonoBehaviour
         print("je ben in prosses");
 
        // als de team member niet active is destory object
-        if (GameObject.FindGameObjectWithTag("ActiveMember") != null)
+        if (GameObject.FindGameObjectWithTag("ActiveMember_Player") != null)
         {
             print("Character verwisselt");
-            Destroy(GameObject.FindGameObjectWithTag("ActiveMember"));
+            Destroy(GameObject.FindGameObjectWithTag("ActiveMember_Player"));
         }
-        GameObject playerGo = Instantiate(rec.teamMember[TeamNumber], BS.playerstation.transform);
+        GameObject playerGo = Instantiate(teammate, BS.playerstation);
         playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
-        playerGo.tag = "ActiveMember";
+        playerGo.tag = "ActiveMember_Player";
         BS.playerunit = playerGo.GetComponent<Unit>();
 
         inzetten(TeamNumber);

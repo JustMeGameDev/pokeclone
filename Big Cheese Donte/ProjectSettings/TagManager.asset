@@ -8,18 +8,22 @@ TagManager:
   - SpawnEnemy
   - volume
   - player
-  - ActiveMember
   - pauze
   - Encounter
   - floor
   - ShopManager
   - Uiscripts
   - Enemy
+  - ActiveMember_Player
+  - ActiveMember_Enemy
+  - ActiveMember
+  - fightWith
+  - AI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - WhatIsGround
   - Water
   - UI
   - Inneractable

@@ -11,6 +11,7 @@ public class EntShopScript : MonoBehaviour
 
     void Start()
     {
+        PlayerCam = GameObject.FindGameObjectWithTag("MainCamera");
         ShopCanvas.gameObject.SetActive(false);
         ShopCam.gameObject.SetActive(false);
         PlayerCam.gameObject.SetActive(true); //Odd
@@ -19,7 +20,7 @@ public class EntShopScript : MonoBehaviour
 
     void Update()
     {
-        
+        PlayerCam = GameObject.FindGameObjectWithTag("MainCamera");
     }
     public void ShopCanvasOn()
     {
