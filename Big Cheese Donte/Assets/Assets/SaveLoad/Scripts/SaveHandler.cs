@@ -4,60 +4,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+
 public class SaveHandler : MonoBehaviour 
 {
 
     public Vector3 playerPos;
     public Gamdata gamedata = new Gamdata();
-    public Enemystats enemystats = new Enemystats();
     public GameObject Player;
-    public shopmaster Shopmaster;
+    public shopmaster Shopmaster = new shopmaster();
     public static SaveHandler Instance;
+    public EnemyID enemyid = new EnemyID();
+    public string[] enemy = new string[4];
+
+
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
         GameObject[] objs = GameObject.FindGameObjectsWithTag("DataHandler");
 
-
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
         }
 
-        DontDestroyOnLoad(this.gameObject);
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "World":
-                Player = GameObject.FindGameObjectWithTag("Player");
-                Shopmaster = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
-                break;
 
-            case "Fight":
-                Shopmaster = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
-                break;
-        }
+
+           //     Load();
+        DontDestroyOnLoad(this.gameObject);
       
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "World":
-                Player = GameObject.FindGameObjectWithTag("Player");
-                Shopmaster = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
-                break;
-
-            case "Fight":
-                Shopmaster = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
-                    break;
-
-        }
-                Load();
-    }
+    
     //public SaveObject saveObject;
     private void Update() 
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        enemyid = GetComponent<EnemyID>();
+        Shopmaster = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
         if (Input.GetKeyDown(KeyCode.K)) 
         {
             Save();
@@ -67,38 +50,19 @@ public class SaveHandler : MonoBehaviour
         {
             Load();
         }
-        //auto-save function
-
-        //SaveTimer = SaveTimer - 0.02f;
-
-        //if (SaveTimer <= 0)
-        //{
-        //    print("AutoSave");
-        //    SaveTimer = 300f;
-
-        //    Save();
-        //}
     
     }
-    
+
     public void Save() {
         // Save
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "World":
-                gamedata.playerposition = Player.transform.position;
-                gamedata.money = Shopmaster.money;
-                break;
 
-            case "Fight":
-                gamedata.money = Shopmaster.money;
-                break;
-        }
+        gamedata.playerposition = Player.transform.position;
+        gamedata.money = Shopmaster.money;
+        gamedata.enemies = enemyid.cruters;
+    
 
         string json = JsonUtility.ToJson(gamedata);
-        string enemy = JsonUtility.ToJson(enemystats);
         SaveSystem.Save(json);
-        SaveSystem.SaveTeam(enemy);
 
         print("Saved!");
     }
@@ -107,22 +71,15 @@ public class SaveHandler : MonoBehaviour
     {
         // Load
         string saveString = SaveSystem.Load();
-        string Loadteam = SaveSystem.LoadTeam();
         if (saveString != null) {
-            print("Loaded: " + saveString + " " + Loadteam);
+            print("Loaded: " + saveString);
             gamedata = JsonUtility.FromJson<Gamdata>(saveString);
-            enemystats = JsonUtility.FromJson<Enemystats>(Loadteam);
-            switch (SceneManager.GetActiveScene().name)
-            {
-                case "World":
+            
                     Player.transform.position = gamedata.playerposition;
                     Shopmaster.money = gamedata.money;
-                    break;
-
-                case "Fight":
-                    Shopmaster.money = gamedata.money;
-                    break;
-            }
+                    enemyid.cruters = gamedata.enemies;
+                    
+       
             
         } else {
             print("No save");
@@ -135,11 +92,6 @@ public class SaveHandler : MonoBehaviour
         public Vector3 playerposition;
         public int money;
         public Dictionary<Inventorydata, inventoryitem> itemData;
-    }
-
-    [System.Serializable]
-
-    public class Enemystats : MonoBehaviour
-    {
+        public string[] enemies; 
     }
 }

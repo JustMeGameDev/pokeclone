@@ -8,7 +8,8 @@ public class shopmaster : MonoBehaviour
     public GameObject denyBandage;
     public GameObject denyAlcohol;
     public GameObject DenyCocaine;
-    
+
+    public static shopmaster Instance;
 
     public int money = 100;
     public TextMeshProUGUI moneytext;
@@ -20,8 +21,15 @@ public class shopmaster : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("ShopManager");
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
         moneytext.text = money.ToString();
         moneytextShop.text = money.ToString();
+        Instance = this;
     }
     public void MoneyCheck()
     {

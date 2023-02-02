@@ -6484,8 +6484,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: 
   output: 
+  unit: {fileID: 0}
   recruit: {fileID: 0}
   save: {fileID: 1270690816}
+  cruters:
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1273845641
 GameObject:
   m_ObjectHideFlags: 0

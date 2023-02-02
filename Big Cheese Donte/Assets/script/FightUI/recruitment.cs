@@ -14,7 +14,7 @@ public class recruitment : FightUI
 
     //ICollectible col;
     public Unit enemy;
-    shopmaster shopm;
+    public shopmaster shopm;
 
     //recruit options
     public GameObject BribeRT;
@@ -44,8 +44,8 @@ public class recruitment : FightUI
 
     public List<GameObject> teamMember = new List<GameObject>();
     public GameObject[] TeamMember;
-    public SaveHandler.Enemystats enemystats;
     public SaveHandler save;
+    public EnemyID enemyid; 
 
     //text 
     public TMP_Text LeftRecruitTextt;
@@ -53,20 +53,13 @@ public class recruitment : FightUI
     List<string> smartTalk = new List<string> { "\"If you do not join me i will obtain several kidney diseases \"" };
     List<string> enemyTalk = new List<string> { "\"ait sure\"" };
 
-
-    private void OnLevelWasLoaded(int level)
-    {
-        //enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Unit>();
-        //enemy = GameObject.Find("enemy").GetComponent<Unit>();
-    }
     private void Start()
     {
         teamMember = TeamMember.ToList();
-        enemystats = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler.Enemystats>();
         save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Unit>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<Unit>();
         shopm = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
-
+        enemyid =save.GetComponent<EnemyID>();
         shopm.money = geld;
         
     }
@@ -150,16 +143,8 @@ public class recruitment : FightUI
     }
     public void recruit()
     {
-        teamMember.Add(GameObject.FindGameObjectWithTag("enemy"));
-        //enemystats.names.Add(enemy.name);
-        //enemystats.Levels.Add(enemy.unitLevelEnemy);
-        //enemystats.damages.Add(enemy.damage);
-        //enemystats.maxHP.Add(enemy.maxHP);
-        //enemystats.curHP.Add(enemy.currentHP);
-        //enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
-        //save.enemystats.enemys.Add(GameObject.FindGameObjectWithTag("enemy"));
-        //save.Save();
-        //  SceneManager.LoadScene(scene);
+        enemyid.StringConstructor();
+        SceneManager.LoadScene(scene);
     }
 
     public IEnumerator switchScene()

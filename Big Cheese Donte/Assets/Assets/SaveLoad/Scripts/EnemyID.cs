@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class enemyID : MonoBehaviour
+using System.Linq;
+public class EnemyID : MonoBehaviour
 {
     public string input;
     public string output;
-    public static Unit unit;
-    public recruitment recruit;
-    public SaveHandler save;
-    public string[] cruters = new string[4];
+    public Unit unit;
+    public string[] cruters;
+    public List<string> creaturs = new List<string>();
 
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        recruit = GameObject.FindGameObjectWithTag("Enemy").GetComponent<recruitment>();
-        unit = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Unit>();
+        unit = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<Unit>();
     }
 
     // Update is called once per frame
@@ -26,13 +24,22 @@ public class enemyID : MonoBehaviour
         int damage = unit.damage;
         int maxHP = unit.maxHP;
         int curHP = unit.currentHP;
-        string naam = unit.unitName.Substring(0, 2); ;
-        int id = cruters.Length;
-        
+        string naam = "";//unit.unitName.Substring(1, 2); ;
+        int id = 0;  
+        int sprite = 0;
+
 
 
         output = $"{naam}{level.ToString()}{damage.ToString()}{maxHP.ToString()}{curHP.ToString()}{id.ToString()}{sprite.ToString()}";
-        cruters[id] = output;
+        creaturs = cruters.ToList();
+        cruters.DefaultIfEmpty();
+        if(creaturs.Count < 4)
+        {
+            creaturs.Add(output);
+        }
+        cruters = creaturs.ToArray();
+
+
     }
 
     public void StringReader()

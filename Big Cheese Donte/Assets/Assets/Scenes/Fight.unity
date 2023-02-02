@@ -2660,7 +2660,7 @@ GameObject:
   - component: {fileID: 509054858}
   m_Layer: 5
   m_Name: enemystation
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8623,9 +8623,10 @@ MonoBehaviour:
   TeamMember:
   - {fileID: 5001625893788936230, guid: cb9c1d7f4cf6c1a4498f438118fd5e61, type: 3}
   enemystats:
-    enemys: []
+    enemies: []
   save: {fileID: 0}
   LeftRecruitTextt: {fileID: 0}
+  enemyid: {fileID: 0}
 --- !u!1 &1734508063
 GameObject:
   m_ObjectHideFlags: 0
