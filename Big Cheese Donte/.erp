@@ -5,7 +5,12 @@
   <resetOnSceneChange>false</resetOnSceneChange>
   <debugMode>false</debugMode>
   <EditorClosed>true</EditorClosed>
+<<<<<<< Updated upstream
   <LastTimestamp>1675080141</LastTimestamp>
   <LastSessionID>351619682132308449</LastSessionID>
+=======
+  <LastTimestamp>1676887991</LastTimestamp>
+  <LastSessionID>6499296064604485425</LastSessionID>
+>>>>>>> Stashed changes
   <Errored>true</Errored>
 </ERPSettings>
