@@ -51,8 +51,6 @@ public class FightUI : MonoBehaviour
         Main.SetActive(false);
         Fight.SetActive(true);
         LinkerFightText.text = randomName + FightQuip[Random.Range(0, FightQuip.Count)]; // dit zorgt ervoor dat je een random quip krijgt als je op fight klikt
-
-
     }
     public void ItemMenu()
     {

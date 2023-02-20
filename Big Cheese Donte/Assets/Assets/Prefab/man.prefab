@@ -59,6 +59,7 @@ MonoBehaviour:
   damage: 14
   maxHP: 100
   currentHP: 100
+  NEW: 1
   names:
   - Niels
   - Jesper

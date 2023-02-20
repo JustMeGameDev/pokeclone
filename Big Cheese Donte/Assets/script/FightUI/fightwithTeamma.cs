@@ -7,7 +7,7 @@ public class fightwithTeamma : MonoBehaviour
 {
     //the teamMate member need to be showcase
     public GameObject[] team;
-
+    Unit u;
     BattleSystem BS;
     public GameObject teammate;
 
@@ -20,7 +20,7 @@ public class fightwithTeamma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+       // save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
         fillTeam();
         BS = GameObject.Find("ui scripts").GetComponent<BattleSystem>();
         rec = ScriptUI.GetComponent<recruitment>();
@@ -34,9 +34,9 @@ public class fightwithTeamma : MonoBehaviour
 
             for(int i = 0; i < team.Length; i++)
             {
-                Unit temp = teammate.GetComponent<Unit>();
-                Sprite currentImage = temp.Currentsprite;
-                team[i].GetComponent<Image>().sprite = currentImage;
+                GameObject currentFound = rec.teamMember[i];
+                Image currentImage = currentFound.GetComponent<Image>();
+                team[i].GetComponent<Image>().sprite = currentImage.sprite;
                 team[i] = Instantiate(rec.teamMember[i]);
 
                  
@@ -56,7 +56,7 @@ public class fightwithTeamma : MonoBehaviour
 
     public void fillTeam()
     {
-        save.Load();
+       // save.Load();
         //print(save.enemystats.enemys);
         //team = save.enemystats.enemys;
     }
@@ -68,12 +68,14 @@ public class fightwithTeamma : MonoBehaviour
         print("je ben in prosses");
 
        // als de team member niet active is destory object
-        if (GameObject.FindGameObjectWithTag("ActiveMember_Player") != null)
+        if (GameObject.FindGameObjectWithTag("ActiveMember_Enemy") != null || GameObject.FindGameObjectWithTag("ActiveMember_Player") != null)
         {
             print("Character verwisselt");
+            Destroy(GameObject.FindGameObjectWithTag("ActiveMember_Enemy"));
+
             Destroy(GameObject.FindGameObjectWithTag("ActiveMember_Player"));
         }
-        GameObject playerGo = Instantiate(teammate, BS.playerstation);
+        GameObject playerGo = Instantiate(rec.teamMember[TeamNumber], BS.playerstation);
         playerGo.transform.SetParent(GameObject.Find("playerstation").transform);
         playerGo.tag = "ActiveMember_Player";
         BS.playerunit = playerGo.GetComponent<Unit>();

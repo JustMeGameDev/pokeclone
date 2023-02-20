@@ -56,7 +56,7 @@ public class recruitment : FightUI
     private void Start()
     {
         teamMember = TeamMember.ToList();
-        save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
+      //  save = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<SaveHandler>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<Unit>();
         shopm = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<shopmaster>();
         enemyid =save.GetComponent<EnemyID>();
@@ -143,7 +143,7 @@ public class recruitment : FightUI
     }
     public void recruit()
     {
-        enemyid.StringConstructor();
+       // enemyid.StringConstructor();
         SceneManager.LoadScene(scene);
     }
 

@@ -24,8 +24,8 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
     public bool NEW = true;
-    public Sprite[] sprites;
-    public Sprite Currentsprite;
+   // public Sprite[] sprites;
+   // public Sprite Currentsprite;
 
     public string[] names ={
             "Niels",
@@ -45,9 +45,9 @@ public class Unit : MonoBehaviour
             "Marcello"
         };
 
-    private void Awake()
+    public void Awake()
     {
-        enemyID = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<EnemyID>();
+       enemyID = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<EnemyID>();
 
         if (NEW)
         {
@@ -91,9 +91,9 @@ public class Unit : MonoBehaviour
             damage = enemyID.Damage;
             currentHP = enemyID.CurHP;
             maxHP = enemyID.MaxHP;
-            Image image = GetComponent<Image>();
-            Currentsprite = sprites[enemyID.Sprite];
-            image.sprite = Currentsprite;
+            //Image image = GetComponent<Image>();
+           // Currentsprite = sprites[enemyID.Sprite];
+            //image.sprite = Currentsprite;
         }
       
 

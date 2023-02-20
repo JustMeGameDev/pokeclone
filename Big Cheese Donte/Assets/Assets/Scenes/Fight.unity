@@ -8524,6 +8524,8 @@ MonoBehaviour:
   - {fileID: 3412163705258353680, guid: 5c90e1b6e6aeaec4eb949a4e875dddcd, type: 3}
   TeamMember:
   - {fileID: 5001625893788936230, guid: cb9c1d7f4cf6c1a4498f438118fd5e61, type: 3}
+  - {fileID: 3412163705258353680, guid: 5c90e1b6e6aeaec4eb949a4e875dddcd, type: 3}
+  - {fileID: 6889424843728484366, guid: 5229ab211f7615a4aaa7a061eeca6d78, type: 3}
   save: {fileID: 0}
   enemyid: {fileID: 0}
   LeftRecruitTextt: {fileID: 0}
