@@ -21,6 +21,7 @@ public class WalkAI : MonoBehaviour
     public GameObject Textcanv;
     public string Textvalue;
     public TMP_Text textelement;
+    public Animation animation;
 
 
     public bool NPClooker;
@@ -46,6 +47,7 @@ public class WalkAI : MonoBehaviour
 
             ITWwaypointIndex();
             UpdateDes();
+            animation.Play();
 
         }
         if (Npctimerbool == true)
