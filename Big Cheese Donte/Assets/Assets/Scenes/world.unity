@@ -3511,6 +3511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0436e57eb02f65b4f8759af2cee58e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &647875610 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6903822197461184655, guid: bf1c7112cf4f66f48ad8b6af2cae97af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1536395549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654007147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7628,6 +7634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5295911839720895258, guid: bf1c7112cf4f66f48ad8b6af2cae97af,
         type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 647875610}
+    - target: {fileID: 5295911839720895258, guid: bf1c7112cf4f66f48ad8b6af2cae97af,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 849114984}
@@ -7796,6 +7807,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6903822197461184655, guid: bf1c7112cf4f66f48ad8b6af2cae97af,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b86e675286b3b7e4e80eb74ca319de80, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1c7112cf4f66f48ad8b6af2cae97af, type: 3}
 --- !u!1001 &1539899666

@@ -21,7 +21,7 @@ public class WalkAI : MonoBehaviour
     public GameObject Textcanv;
     public string Textvalue;
     public TMP_Text textelement;
-    public Animation animation;
+    public Animator anim;
 
 
     public bool NPClooker;
@@ -40,6 +40,10 @@ public class WalkAI : MonoBehaviour
 
     void Update()
     {
+        if (agent.isActiveAndEnabled)
+        {
+            anim.Play("c1_1");
+        }
 
         textelement = GetComponent<TextMeshPro>();
         if (Vector3.Distance(transform.position, target) < 1)
@@ -47,8 +51,7 @@ public class WalkAI : MonoBehaviour
 
             ITWwaypointIndex();
             UpdateDes();
-            animation.Play();
-
+            
         }
         if (Npctimerbool == true)
         {

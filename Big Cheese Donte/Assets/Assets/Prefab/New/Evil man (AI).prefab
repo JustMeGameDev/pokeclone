@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5295911839720895259}
   - component: {fileID: 5295911839720895256}
   - component: {fileID: 5295911839720895253}
+  - component: {fileID: 6903822197461184655}
   m_Layer: 6
   m_Name: Evil man (AI)
   m_TagString: Untagged
@@ -153,7 +154,7 @@ MonoBehaviour:
   Textcanv: {fileID: 0}
   Textvalue: I dont like you cause you do not have a cool hat like me
   textelement: {fileID: 0}
-  animation: {fileID: 0}
+  anim: {fileID: 0}
   NPClooker: 0
   Player: {fileID: 0}
 --- !u!114 &5295911839720895259
@@ -260,6 +261,26 @@ MonoBehaviour:
   transition: 0
   detransition: 0
   scene: Main Menu
+--- !u!95 &6903822197461184655
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295911839720895264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b252f928ab867744887c86b983f4c16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5295911840117444828
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +473,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 39a3c3426be7cbd4f92f45fd07b86716,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39a3c3426be7cbd4f92f45fd07b86716,
         type: 3}
@@ -499,6 +520,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: c1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1361415761222804137, guid: 39a3c3426be7cbd4f92f45fd07b86716,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361415761222804137, guid: 39a3c3426be7cbd4f92f45fd07b86716,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a3c3426be7cbd4f92f45fd07b86716, type: 3}
 --- !u!4 &3874773704015306340 stripped
@@ -533,26 +564,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &6046901806817592496 stripped
+--- !u!1 &7293600391029522233 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 39a3c3426be7cbd4f92f45fd07b86716,
+  m_CorrespondingSourceObject: {fileID: 6302609228562482870, guid: 39a3c3426be7cbd4f92f45fd07b86716,
     type: 3}
   m_PrefabInstance: {fileID: 3625203477223192975}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &8806379455633609829
+--- !u!95 &2321229774991071004
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046901806817592496}
+  m_GameObject: {fileID: 7293600391029522233}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5017016ba9dda8d4db8bf13521b15d45, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
