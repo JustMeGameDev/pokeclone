@@ -2540,8 +2540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8176961446503174679}
-  - component: {fileID: 6431939325405043804}
-  - component: {fileID: 906919344}
+  - component: {fileID: 7356484576532785017}
   m_Layer: 0
   m_Name: c1.1
   m_TagString: Untagged
@@ -2566,7 +2565,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6431939325405043804
+--- !u!114 &7356484576532785017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2575,74 +2574,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8805020713603991725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0436e57eb02f65b4f8759af2cee58e7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a94ae9578ded694e8b138fc82ad3d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  target: {x: 0, y: 0, z: 0}
-  NPCtimer: 0
-  NPCtimerMax: 7
-  Npctimerbool: 0
-  Crosshaircanv: {fileID: 0}
-  Textcanv: {fileID: 0}
-  Textvalue: I dont like you cause you do not have a cool hat like me
-  textelement: {fileID: 0}
-  NPClooker: 0
-  Player: {fileID: 0}
---- !u!114 &906919344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805020713603991725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f029ca95abbf84041871202378451e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6431939325405043804}
-        m_TargetAssemblyTypeName: WalkAI, Assembly-CSharp
-        m_MethodName: Interacttimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6431939325405043804}
-        m_TargetAssemblyTypeName: WalkAI, Assembly-CSharp
-        m_MethodName: Interacttimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  interactIcon: {fileID: 21300000, guid: 592d9ce254b4ca343bb47b0d37a35eec, type: 3}
-  Iconsize: {x: 0, y: 0}
-  ID: 0
+  targetWaypoints: []
+  movementSpeed: 5
 --- !u!1 &8846460736655688157
 GameObject:
   m_ObjectHideFlags: 0
