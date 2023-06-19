@@ -1237,11 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373ebe5f24ba1634cb7e424b9368c096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team:
-  - {fileID: 628397096}
-  - {fileID: 1761104118}
-  - {fileID: 1199890171}
-  - {fileID: 555991709}
+  team: []
   teammate: {fileID: 5744364832551369299, guid: 5961ba4274597ed4fb209a6a15ab29e2,
     type: 3}
   ScriptUI: {fileID: 1715431892}
@@ -8520,12 +8516,8 @@ MonoBehaviour:
   WantToTeamUp: 2
   refuse: 0
   Gift: {fileID: 1161527263}
-  teamMember:
-  - {fileID: 3412163705258353680, guid: 5c90e1b6e6aeaec4eb949a4e875dddcd, type: 3}
-  TeamMember:
-  - {fileID: 5001625893788936230, guid: cb9c1d7f4cf6c1a4498f438118fd5e61, type: 3}
-  - {fileID: 3412163705258353680, guid: 5c90e1b6e6aeaec4eb949a4e875dddcd, type: 3}
-  - {fileID: 6889424843728484366, guid: 5229ab211f7615a4aaa7a061eeca6d78, type: 3}
+  teamMember: []
+  TeamMember: []
   save: {fileID: 0}
   enemyid: {fileID: 0}
   LeftRecruitTextt: {fileID: 0}
