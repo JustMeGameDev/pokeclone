@@ -11,7 +11,7 @@ public class Transition : MonoBehaviour
     public Volume m_Volume;
     public bool transition;
     public bool detransition;
-    public string scene;
+    public GameObject battleCanvas;
 
     private void Awake()
     {
@@ -37,8 +37,8 @@ public class Transition : MonoBehaviour
             m_Volume.weight += (Time.deltaTime * .5f);
             if (m_Volume.weight >= .99f)
             {
-                
-                SceneManager.LoadScene(scene);
+
+                battleCanvas.SetActive(true);
                 transition = false;
                 
             }
