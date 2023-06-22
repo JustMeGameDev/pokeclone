@@ -3,45 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Transition : MonoBehaviour
-{
-    [Header("varibles")]
-    public Volume m_Volume;
-    public bool transition;
-    public bool detransition;
-    public GameObject battleCanvas;
 
-    private void Awake()
     {
-        m_Volume = GameObject.FindGameObjectWithTag("volume").GetComponent<Volume>();
-    }
-    void FixedUpdate()
-    {
-        if (detransition)
+        [Header("varibles")]
+        public Volume m_Volume;
+        public bool transition;
+        public bool detransition;
+        public Canvas battleCanvas;
+        public Movement movement;
+        public LookCam look;
+
+        private void Awake()
         {
-            m_Volume.weight -= (Time.deltaTime * .8f);
-            if (m_Volume.weight <= .000001f)
+            m_Volume = GameObject.FindGameObjectWithTag("volume").GetComponent<Volume>();
+            battleCanvas = GameObject.FindGameObjectWithTag("BattleCanvas").GetComponent<Canvas>();
+            movement = this.GetComponent<Movement>();
+            look = this.GetComponent<LookCam>();
+            battleCanvas.enabled = false;
+        }
+        public void Update()
+        {
+
+            if (transition)
             {
-                this.gameObject.GetComponent<Movement>().enabled = true;
-                this.gameObject.GetComponent<LookCam>().Inmenu = false;
-                detransition = false;
-                m_Volume.weight = 0.00001f;
+                if (battleCanvas.isActiveAndEnabled)
+                {
+                    movement.enabled = true;
+                    look.enabled = true;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                    m_Volume.weight += (Time.deltaTime * .5f);
+                    if (m_Volume.weight >= .99f)
+                    {
+
+                        battleCanvas.enabled = false;
+                        transition = false;
+
+                    }
+                }
+                else
+                {
+                    movement.enabled = false;
+                    look.enabled = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    m_Volume.weight += (Time.deltaTime * .5f);
+                    if (m_Volume.weight >= .99f)
+                    {
+
+                        battleCanvas.enabled = true;
+                        transition = false;
+
+                    }
+                }
+            }
+            else if (detransition)
+            {
+                m_Volume.weight -= (Time.deltaTime * .8f);
+                if (m_Volume.weight <= .000001f)
+                {
+                    movement.enabled = true;
+                    look.enabled = true;
+                    detransition = false;
+                    m_Volume.weight = 0.00001f;
+                }
             }
         }
-
-        if (transition)
-        {
-            this.gameObject.GetComponent<Movement>().enabled = false;
-            m_Volume.weight += (Time.deltaTime * .5f);
-            if (m_Volume.weight >= .99f)
-            {
-
-                battleCanvas.SetActive(true);
-                transition = false;
-                
-            }
-        }
     }
-}
+

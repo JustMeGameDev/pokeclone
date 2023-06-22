@@ -13,17 +13,19 @@ public class OptionSwitch : MonoBehaviour
     public GameObject backButton;
 
     public GameObject battlebutton;
-    
-    public float randomNumber = Random.Range(0, 5);
 
+    public int randomNumber = 0; //Random.Range(0, 5);
+
+    //public Transition trans;
     Movement movement;
     LookCam cam;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         movement.GetComponent<Movement>().enabled = false; 
         cam.GetComponent<LookCam>().enabled = false;
+        //trans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transition>();
     }
 
     // Update is called once per frame
@@ -56,16 +58,12 @@ public class OptionSwitch : MonoBehaviour
     }
     public void Run()
     {
-        if(randomNumber == 0)
-        {
-            battleCanvas.SetActive(false);
-            movement.GetComponent<Movement>().enabled = true;
-            cam.GetComponent<LookCam>().enabled = true;
-        }
-        else
-        {
-            Debug.Log("runnen is mis lukt");
-        }
+       
+        
+            //roep transition aan en bool true
+            //trans.transition = true;
+        
+        
         
     }
 }

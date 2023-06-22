@@ -10,6 +10,7 @@ public class detectscript : MonoBehaviour
     public float GroteDrawgizmo = 0.2f;
     public int MaxLenght = 100;
     public Transition transition;
+    public bool fought;
 
 
     private void Update()
@@ -18,10 +19,14 @@ public class detectscript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, MaxLenght))
         {
-            Lasthit = hit.transform.gameObject;
-            transition = Lasthit.GetComponent<Transition>();
-            collision = hit.point;
-            transition.transition = true;
+            if(!fought)
+            {
+                Lasthit = hit.transform.gameObject;
+                transition = Lasthit.GetComponent<Transition>();
+                collision = hit.point;
+                transition.transition = true;
+               // fought = true;
+            }
             print(hit.transform.gameObject);
         }
 

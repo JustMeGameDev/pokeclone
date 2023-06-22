@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [Header("Movement")]
+    public bool canMove;
     public float moveSpeed;
     [SerializeField] private float jump = 18f;
     public float grounddrag;
@@ -31,6 +32,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        canMove = true;
         RB = GetComponent<Rigidbody>();
         //RB.freezeRotation = true;
         sticky = GetComponent<StickyPlatform>();
@@ -47,7 +49,11 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+        if (canMove)
+        {
+
         PInput();
+        }
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         Gizmos.color = Color.yellow;

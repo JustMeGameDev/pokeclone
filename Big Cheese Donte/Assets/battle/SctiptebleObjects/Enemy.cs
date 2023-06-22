@@ -16,8 +16,7 @@ public class Enemy : ScriptableObject
     public int Defense;
     public int Damage;
     public string Type;
-    public Image image;
-
-
+    public Sprite image;
+  
     
 }
