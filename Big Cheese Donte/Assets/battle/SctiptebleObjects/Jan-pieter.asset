@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Jan-pieter
   m_EditorClassIdentifier: 
   Name: Jan-pieter
-  HP: 100
-  MaxHP: 200
+  HP: -76
+  MaxHP: 100
   XP: 0
   MaxXP: 50
   Level: 1

@@ -14,6 +14,9 @@ public class OptionSwitch : MonoBehaviour
 
     public GameObject battlebutton;
 
+    public GameObject recuitbutton;
+
+
     public int randomNumber = 0; //Random.Range(0, 5);
 
     //public Transition trans;
@@ -58,12 +61,10 @@ public class OptionSwitch : MonoBehaviour
     }
     public void Run()
     {
-       
-        
-            //roep transition aan en bool true
-            //trans.transition = true;
-        
-        
+ 
+    }
+    public void recuit()
+    {
         
     }
 }

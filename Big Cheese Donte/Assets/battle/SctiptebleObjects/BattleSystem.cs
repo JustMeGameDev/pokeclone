@@ -8,13 +8,15 @@ public class BattleSystem : MonoBehaviour
 {
     public Enemy enemy;
     public Enemy Team;
+    public TeamArray TeamMembers;
+    public TeamArray EnemyMember;
 
     private bool playerTurn = true;
     private bool isBattleOver = false;
-    private int playerHealth = 100;
 
-    private int enemyHealth;
-    private int teamHealth;
+
+    public int enemyHealth;
+    public int teamHealth;
 
     public Image Enemysprite;
     public Image teamSprite;
@@ -25,6 +27,12 @@ public class BattleSystem : MonoBehaviour
     public Slider EnemyHP;
     public Slider teamHP;
 
+    public Button RunButton;
+    public Button BattleButton;
+
+    public OptionSwitch optionSwitch;
+
+    public bool start = true;
 
 
     private void Start()
@@ -42,6 +50,12 @@ public class BattleSystem : MonoBehaviour
         teamHP.value = Team.HP;
 
         EnemyHP.maxValue = enemy.MaxHP;
+        teamHP.maxValue = Team.MaxHP;
+
+        RunButton = GameObject.Find("mm Run button").GetComponent<Button>();
+        BattleButton = GameObject.Find("mm Battle button").GetComponent<Button>();
+
+        optionSwitch = this.GetComponent<OptionSwitch>();
     }
 
 
@@ -58,14 +72,14 @@ public class BattleSystem : MonoBehaviour
 
         if (playerTurn)
         {
-            // Player's turn logic
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AttackEnemy();
-            }
+            RunButton.enabled = true;
+            BattleButton.enabled = true;
+           
         }
         else
         {
+            RunButton.enabled = false;
+            BattleButton.enabled = false;
             // Enemy's turn logic
             AttackPlayer();
         }
@@ -79,6 +93,7 @@ public class BattleSystem : MonoBehaviour
         Debug.Log("Player attacked enemy for " + damage + " damage.");
         print(enemyHealth);
         enemy.HP = enemyHealth;
+        optionSwitch.back();
 
         if (enemyHealth <= 0)
         {
@@ -87,27 +102,36 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
+            start = false;
             playerTurn = false;
         }
     }
 
-    private void AttackPlayer()
+    public void AttackPlayer()
     {
-        int damage = enemy.Damage - Random.Range(0, 5); // Replace with your own calculation
+        int damage = enemy.Damage + Random.Range(5, 9); // Replace with your own calculation
 
         int actualDamage = Mathf.Max(0, damage - enemy.Defense);
 
-        playerHealth -= actualDamage;
+        teamHealth -= actualDamage;
         Debug.Log("Enemy attacked player for " + actualDamage + " damage.");
+        print(teamHealth);
+        Team.HP = teamHealth;
 
-        if (playerHealth <= 0)
+
+        if (teamHealth <= 0)
         {
             Debug.Log("Player defeated!");
             isBattleOver = true;
+
         }
         else
         {
             playerTurn = true;
         }
+    }
+    public void recruit()
+    {
+         
     }
 }
