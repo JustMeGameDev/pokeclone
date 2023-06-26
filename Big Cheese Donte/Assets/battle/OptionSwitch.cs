@@ -16,7 +16,8 @@ public class OptionSwitch : MonoBehaviour
 
     public GameObject recuitbutton;
 
-
+    public GameObject myTeamButtom;
+    public GameObject myTeamoption;
     public int randomNumber = 0; //Random.Range(0, 5);
 
     //public Transition trans;
@@ -43,13 +44,17 @@ public class OptionSwitch : MonoBehaviour
         BattleOption.SetActive(false);
         run.SetActive(true);
         backButton.SetActive(false);
+        myTeamButtom.SetActive(true);
+        myTeamoption.SetActive(false);
     }
     public void battle()
     {
         battlebutton.SetActive(false);
         BattleOption.SetActive(true);
         run.SetActive(false);
-        backButton.SetActive(true);
+        backButton.SetActive(true); 
+        myTeamButtom.SetActive(false);
+        myTeamoption.SetActive(false);
     }
 
     public void back()
@@ -57,7 +62,9 @@ public class OptionSwitch : MonoBehaviour
         battlebutton.SetActive(true);
         BattleOption.SetActive(false);
         run.SetActive(true);
-        backButton.SetActive(false);
+        backButton.SetActive(false); 
+        myTeamButtom.SetActive(true);
+        myTeamoption.SetActive(false);
     }
     public void Run()
     {
@@ -66,5 +73,15 @@ public class OptionSwitch : MonoBehaviour
     public void recuit()
     {
         
+    }
+    public void MyTeam()
+    {
+        battlebutton.SetActive(false);
+        BattleOption.SetActive(false);
+        run.SetActive(false);
+        backButton.SetActive(true);
+        myTeamButtom.SetActive(false);
+        myTeamoption.SetActive(true);
+        recuitbutton.SetActive(false);
     }
 }

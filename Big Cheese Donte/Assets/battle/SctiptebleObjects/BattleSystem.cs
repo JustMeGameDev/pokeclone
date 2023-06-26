@@ -11,6 +11,8 @@ public class BattleSystem : MonoBehaviour
     public TeamArray TeamMembers;
     public TeamArray EnemyMember;
 
+    public EnemyManger enemyManager;
+
     private bool playerTurn = true;
     private bool isBattleOver = false;
 
@@ -132,6 +134,22 @@ public class BattleSystem : MonoBehaviour
     }
     public void recruit()
     {
-         
+        float randomValue = Random.value;
+
+        // Set the chance of enemy joining the team (50%)
+        float joinChance = 0.5f;
+
+        if (randomValue <= joinChance)
+        {
+            enemyManager.CaptureEnemy(enemy);
+        }
     }
+    public void MyTeam()
+    { 
+        for (int i = 0; i < TeamMembers.Array.Length; i++)
+        {
+            TeamMembers.Array[i].name.ToString();
+        }  
+    }
+
 }
