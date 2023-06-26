@@ -9,7 +9,7 @@ public class BattleSystem : MonoBehaviour
     public Enemy enemy;
     public Enemy Team;
     public TeamArray TeamMembers;
-    public TeamArray EnemyMember;
+    //public TeamArray EnemyMember;
 
     public EnemyManger enemyManager;
 
@@ -39,6 +39,8 @@ public class BattleSystem : MonoBehaviour
 
     private void Start()
     {
+        
+
         Enemysprite.sprite = enemy.image; 
         teamSprite.sprite = Team.image;
        
@@ -148,7 +150,8 @@ public class BattleSystem : MonoBehaviour
     { 
         for (int i = 0; i < TeamMembers.Array.Length; i++)
         {
-            TeamMembers.Array[i].name.ToString();
+            TeamMembers.Array[i].Name.ToString(); 
+            
         }  
     }
 
