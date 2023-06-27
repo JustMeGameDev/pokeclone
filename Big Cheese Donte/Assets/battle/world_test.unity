@@ -594,6 +594,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1085108894}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &56703495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,6 +1407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1085108894}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &224602949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,6 +1899,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1085108894}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8260,6 +8296,7 @@ MonoBehaviour:
   myTeamButtom: {fileID: 831320397}
   myTeamoption: {fileID: 637603181}
   randomNumber: 0
+  trans: {fileID: 849114997}
 --- !u!114 &1085108894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8288,6 +8325,11 @@ MonoBehaviour:
   BattleButton: {fileID: 1488526943}
   optionSwitch: {fileID: 1085108893}
   start: 1
+  TeamButton:
+  - {fileID: 123244729}
+  - {fileID: 2147124847}
+  - {fileID: 2139160917}
+  - {fileID: 834255824}
 --- !u!114 &1085108895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14684,6 +14726,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1085108894}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

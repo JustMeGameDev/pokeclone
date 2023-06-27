@@ -36,10 +36,10 @@ public class BattleSystem : MonoBehaviour
 
     public bool start = true;
 
+    public TextMeshProUGUI[] TeamButton;
 
     private void Start()
     {
-        
 
         Enemysprite.sprite = enemy.image; 
         teamSprite.sprite = Team.image;
@@ -67,6 +67,7 @@ public class BattleSystem : MonoBehaviour
     {
         EnemyHP.value = enemy.HP;
         teamHP.value = Team.HP;
+        MyTeam();
     }
 
     private void Update()
@@ -150,9 +151,25 @@ public class BattleSystem : MonoBehaviour
     { 
         for (int i = 0; i < TeamMembers.Array.Length; i++)
         {
-            TeamMembers.Array[i].Name.ToString(); 
-            
-        }  
+            string temp = TeamMembers.Array[i].Name.ToString();
+            TeamButton[i].text = temp;
+        }
+       
     }
+    public void spawn(int i)
+    {
+        TeamMembers.Array[i].Name.ToString();
+        TeamMembers.Array[i].HP.ToString();
+        TeamMembers.Array[i].MaxHP.ToString();
+        TeamMembers.Array[i].XP.ToString();
+        TeamMembers.Array[i].MaxXP.ToString();
+        TeamMembers.Array[i].Defense.ToString();
+        TeamMembers.Array[i].Damage.ToString();
+        TeamMembers.Array[i].image.ToString();
+        TeamMembers.Array[i].Level.ToString();
+        TeamMembers.Array[i].HP.ToString();
+
+    }
+
 
 }

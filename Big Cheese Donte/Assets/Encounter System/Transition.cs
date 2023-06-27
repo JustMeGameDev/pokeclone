@@ -6,8 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Transition : MonoBehaviour
-
-    {
+{
         [Header("varibles")]
         public Volume m_Volume;
         public bool transition;
@@ -40,7 +39,8 @@ public class Transition : MonoBehaviour
                     {
 
                         battleCanvas.enabled = false;
-                        transition = false;
+                        transition = false; 
+                        m_Volume.weight = 0;
 
                     }
                 }
@@ -56,21 +56,12 @@ public class Transition : MonoBehaviour
 
                         battleCanvas.enabled = true;
                         transition = false;
+                        m_Volume.weight = 0;
 
                     }
                 }
             }
-            else if (detransition)
-            {
-                m_Volume.weight -= (Time.deltaTime * .8f);
-                if (m_Volume.weight <= .000001f)
-                {
-                    movement.enabled = true;
-                    look.enabled = true;
-                    detransition = false;
-                    m_Volume.weight = 0.00001f;
-                }
-            }
+          
         }
-    }
+}
 

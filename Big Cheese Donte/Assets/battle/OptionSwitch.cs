@@ -23,6 +23,7 @@ public class OptionSwitch : MonoBehaviour
     //public Transition trans;
     Movement movement;
     LookCam cam;
+    public Transition trans;
 
     // Start is called before the first frame update
     public void Start()
@@ -68,7 +69,7 @@ public class OptionSwitch : MonoBehaviour
     }
     public void Run()
     {
-       
+        trans.transition = true;
  
     }
     public void recuit()
