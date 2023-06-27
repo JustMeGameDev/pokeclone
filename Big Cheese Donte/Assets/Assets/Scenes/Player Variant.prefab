@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 8415327594410044390}
   - component: {fileID: 8415327594410044389}
   - component: {fileID: 8620340390447945820}
+  - component: {fileID: 3893956503867043647}
   - component: {fileID: 4230456598073523414}
   - component: {fileID: 1881203587714086045}
   - component: {fileID: 9071329363529752340}
@@ -617,6 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c107e3236672514abd7c019ed3e2c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   moveSpeed: 3
   jump: 18
   grounddrag: 4
@@ -626,9 +628,8 @@ MonoBehaviour:
     m_Bits: 8
   grounded2: 0
   orientation: {fileID: 2495543159698379962}
-  sticky: {fileID: 0}
   inMenu: 0
-  RB: {fileID: 0}
+  RB: {fileID: 8415327594410044408}
   animator: {fileID: 0}
 --- !u!114 &8415327594410044389
 MonoBehaviour:
@@ -665,6 +666,29 @@ MonoBehaviour:
   maxtimer: 10
   chance: 1
   transition: {fileID: 0}
+--- !u!114 &3893956503867043647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415327594410044409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db13e9c673427f14b9ef6c9847da397a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTerritories: []
+  enemyTerritoryMaterial: {fileID: 2100000, guid: 0ba77d10701e0984fa2cd46c733510b8,
+    type: 2}
+  almostTerritoryMaterial: {fileID: 2100000, guid: d32911fb4a420784e8bc5b884615484e,
+    type: 2}
+  myTerritoryMaterial: {fileID: 2100000, guid: e6c156f426868d0488f433e9b6a02522, type: 2}
+  interactionCount: 0
+  interactionCount1: 0
+  interactionCount2: 0
+  interactionCount3: 0
+  player: {fileID: 8415327594410044409}
 --- !u!114 &4230456598073523414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,7 +704,9 @@ MonoBehaviour:
   m_Volume: {fileID: 0}
   transition: 0
   detransition: 0
-  scene: 
+  battleCanvas: {fileID: 0}
+  movement: {fileID: 0}
+  look: {fileID: 0}
 --- !u!114 &1881203587714086045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +768,7 @@ PrefabInstance:
     - target: {fileID: 3314107127086444660, guid: 5f05311273402c040ba074b2e4ae6ac7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3314107127977587440, guid: 5f05311273402c040ba074b2e4ae6ac7,
         type: 3}
@@ -757,12 +783,12 @@ PrefabInstance:
     - target: {fileID: 3314107128253374582, guid: 5f05311273402c040ba074b2e4ae6ac7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3314107128547378462, guid: 5f05311273402c040ba074b2e4ae6ac7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3314107128802175706, guid: 5f05311273402c040ba074b2e4ae6ac7,
         type: 3}

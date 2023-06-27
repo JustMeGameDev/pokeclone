@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     float horizontalI;
     float verticalI;
 
-    public StickyPlatform sticky;
+  
     public bool inMenu;
     Vector3 moveDir;
 
@@ -35,8 +35,7 @@ public class Movement : MonoBehaviour
         canMove = true;
         RB = GetComponent<Rigidbody>();
         //RB.freezeRotation = true;
-        sticky = GetComponent<StickyPlatform>();
-        animator = GetComponent<Animator>();
+      
         
 
     }
@@ -70,13 +69,7 @@ public class Movement : MonoBehaviour
             
             RB.drag = 0;
         }
-        if (Input.GetButtonDown("Jump") && sticky.colide)
-        {
-            RB.constraints = RigidbodyConstraints.None;
-            RB.velocity = new Vector3(RB.velocity.x, jump, RB.velocity.z);
-            sticky.jump = true;
-            sticky.colide = false;
-        }
+      
 
        
 

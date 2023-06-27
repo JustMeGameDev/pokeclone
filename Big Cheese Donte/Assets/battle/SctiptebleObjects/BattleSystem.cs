@@ -12,6 +12,7 @@ public class BattleSystem : MonoBehaviour
     //public TeamArray EnemyMember;
 
     public EnemyManger enemyManager;
+    public Territory ter;
 
     private bool playerTurn = true;
     private bool isBattleOver = false;
@@ -173,7 +174,15 @@ public class BattleSystem : MonoBehaviour
     }
     public void Territoty()
     {
-
+        //als de battle is over interactionCount++
+        if (EnemyHP.value == 0 || enemyManager.enemyContainer != null)
+        {
+            ter.interactionCount++;
+        }
+        else if (teamHP.value == 0)
+        {
+            ter.interactionCount--;
+        }
     }
 
 
