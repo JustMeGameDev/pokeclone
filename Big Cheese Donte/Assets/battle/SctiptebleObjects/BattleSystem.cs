@@ -40,7 +40,7 @@ public class BattleSystem : MonoBehaviour
 
     private void Start()
     {
-
+        Team = TeamMembers.Standing;
         Enemysprite.sprite = enemy.image; 
         teamSprite.sprite = Team.image;
        
@@ -67,7 +67,13 @@ public class BattleSystem : MonoBehaviour
     {
         EnemyHP.value = enemy.HP;
         teamHP.value = Team.HP;
+        Enemysprite.sprite = enemy.image;
+        teamSprite.sprite = Team.image;
+        EnemyNametext.text = enemy.Name;
+        teamNametext.text = Team.Name;
+
         MyTeam();
+        
     }
 
     private void Update()
@@ -153,21 +159,20 @@ public class BattleSystem : MonoBehaviour
         {
             string temp = TeamMembers.Array[i].Name.ToString();
             TeamButton[i].text = temp;
+
         }
        
     }
     public void spawn(int i)
     {
-        TeamMembers.Array[i].Name.ToString();
-        TeamMembers.Array[i].HP.ToString();
-        TeamMembers.Array[i].MaxHP.ToString();
-        TeamMembers.Array[i].XP.ToString();
-        TeamMembers.Array[i].MaxXP.ToString();
-        TeamMembers.Array[i].Defense.ToString();
-        TeamMembers.Array[i].Damage.ToString();
-        TeamMembers.Array[i].image.ToString();
-        TeamMembers.Array[i].Level.ToString();
-        TeamMembers.Array[i].HP.ToString();
+        Enemy temp = Team;
+        Team = TeamMembers.Array[i];
+        TeamMembers.Array.SetValue(temp, i);
+        TeamMembers.Standing = Team;
+
+    }
+    public void Territoty()
+    {
 
     }
 

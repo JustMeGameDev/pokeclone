@@ -6,4 +6,5 @@ using UnityEngine;
 public class TeamArray : ScriptableObject
 {
     public Enemy[] Array;
+    public Enemy Standing;
 }

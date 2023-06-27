@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: teamMembers
   m_EditorClassIdentifier: 
   Array:
-  - {fileID: 11400000, guid: 57267a0138517fd47b91b48af4707642, type: 2}
   - {fileID: 11400000, guid: 491b4c1c87eb00440ac94897bfeb2039, type: 2}
+  - {fileID: 11400000, guid: 0cb83e6ae30abcb429ab5d1a2d6a2c68, type: 2}
+  Standing: {fileID: 11400000, guid: 0cb83e6ae30abcb429ab5d1a2d6a2c68, type: 2}
