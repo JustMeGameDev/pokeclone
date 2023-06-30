@@ -20,6 +20,10 @@ TagManager:
   - fightWith
   - AI
   - BattleCanvas
+  - 0
+  - 1
+  - 2
+  - 3
   layers:
   - Default
   - TransparentFX
@@ -30,7 +34,7 @@ TagManager:
   - Inneractable
   - postprocess
   - AInav
-  - 
+  - Enemy
   - 
   - 
   - 

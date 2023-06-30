@@ -9,14 +9,14 @@ public class BattleSystem : MonoBehaviour
     public Enemy enemy;
     public Enemy Team;
     public TeamArray TeamMembers;
-    //public TeamArray EnemyMember;
+    public TeamArray EnemyMember;
 
     public EnemyManger enemyManager;
     public Territory ter;
 
     private bool playerTurn = true;
     private bool isBattleOver = false;
-
+    public bool interactie = false;
 
     public int enemyHealth;
     public int teamHealth;
@@ -39,8 +39,12 @@ public class BattleSystem : MonoBehaviour
 
     public TextMeshProUGUI[] TeamButton;
 
+    private int rnd;
+
     private void Start()
     {
+        
+
         Team = TeamMembers.Standing;
         Enemysprite.sprite = enemy.image; 
         teamSprite.sprite = Team.image;
@@ -80,8 +84,25 @@ public class BattleSystem : MonoBehaviour
     private void Update()
     {
         if (isBattleOver)
-            return;
-
+        {
+            optionSwitch.Run();
+            interactie = false;
+            switch (ter.id)
+            {
+                case 0:
+                    ter.interactionCount++;
+                    break;
+                case 1:
+                    ter.interactionCount1++;
+                    break;
+                case 2:
+                    ter.interactionCount2++;
+                    break;
+                case 3:
+                    ter.interactionCount3++;
+                    break;
+            }
+        }
         if (playerTurn)
         {
             RunButton.enabled = true;
@@ -95,6 +116,8 @@ public class BattleSystem : MonoBehaviour
             // Enemy's turn logic
             AttackPlayer();
         }
+
+        
     }
 
     public void AttackEnemy()
@@ -147,7 +170,7 @@ public class BattleSystem : MonoBehaviour
         float randomValue = Random.value;
 
         // Set the chance of enemy joining the team (50%)
-        float joinChance = 0.5f;
+        float joinChance = 0.4f;
 
         if (randomValue <= joinChance)
         {
@@ -183,6 +206,11 @@ public class BattleSystem : MonoBehaviour
         {
             ter.interactionCount--;
         }
+    }
+    public void RandomEnemy()
+    {
+       rnd = Random.Range(1, EnemyMember.Array.Length);
+        enemy = EnemyMember.Array[rnd];
     }
 
 

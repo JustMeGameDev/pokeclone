@@ -12,97 +12,142 @@ public class Territory : MonoBehaviour
 
     public int interactionCount = 0;
     public int interactionCount1 = 0;
-    public int interactionCount2 = 0; 
+    public int interactionCount2 = 0;
     public int interactionCount3 = 0;
 
     public GameObject player;
+    public Collider playerCol;
+    public int id;
 
-    // Start is called before the first frame update
-    public void Start()
+    private void Start()
     {
-        
+        playerCol = player.GetComponent<CapsuleCollider>();
+    }
+    // Update is called once per frame
+    public void Update()
+    {
+        UpdateMinimap();
+        InteractWithEnemyTerritory(id); 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
+        id = other.GetComponent<Zoneid>().ID_Zone;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        id = other.GetComponent<Zoneid>().ID_Zone;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        id = 5;
     }
     public void InteractWithEnemyTerritory(int territoryIndex)
-    {  
-        Renderer territoryRenderer = enemyTerritories[territoryIndex].GetComponent<Renderer>(); 
+    {
+        MeshRenderer territoryRenderer = enemyTerritories[territoryIndex].GetComponent<MeshRenderer>();
 
         // als de player in een territory zit en de player win 
         // dan moet de territory waar de player in zit van kleur veranderen
-        if (player && enemyTerritories.Length == 0)
+        switch (territoryIndex)
         {
-            if (interactionCount == 0)
-            {
-                territoryRenderer.material = almostTerritoryMaterial;
-            }
-            else if (interactionCount == 1)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-            }
-            else if (interactionCount >= 2)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-                // Perform additional actions if needed when the territory becomes green.
-            }
-            interactionCount++;
-        }
-        else if (player && enemyTerritories.Length == 1)
-        {
-            if (interactionCount1 == 0)
-            {
-                territoryRenderer.material = almostTerritoryMaterial;
-            }
-            else if (interactionCount1 == 1)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-            }
-            else if (interactionCount1 >= 2)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-                // Perform additional actions if needed when the territory becomes green.
-            }
-            interactionCount1++;
-        }
-        else if (player && enemyTerritories.Length == 2)
-        {
-            if (interactionCount2 == 0)
-            {
-                territoryRenderer.material = almostTerritoryMaterial;
-            }
-            else if (interactionCount2 == 1)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-            }
-            else if (interactionCount2 >= 2)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-                // Perform additional actions if needed when the territory becomes green.
-            }
-            interactionCount2++;
-        }
-        else if (player && enemyTerritories.Length == 3)
-        {
-            if (interactionCount3 == 0)
-            {
-                territoryRenderer.material = almostTerritoryMaterial;
-            }
-            else if (interactionCount3 == 1)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-            }
-            else if (interactionCount3 >= 2)
-            {
-                territoryRenderer.material = myTerritoryMaterial;
-                // Perform additional actions if needed when the territory becomes green.
-            }
-            interactionCount3++;
-        }
 
-        
+            case 0:
+            switch (interactionCount)
+            {
+                case 0:
+                    territoryRenderer.material = enemyTerritoryMaterial;
+                    break;
+                case 1:
+                    territoryRenderer.material = almostTerritoryMaterial;
+                    break;
+                case 2:
+                    territoryRenderer.material = myTerritoryMaterial;
+                    break;
+                default:
+                    interactionCount = 0;
+                    break;
+            }
+                break;
+
+
+            case 1:
+            switch (interactionCount1)
+            {
+                case 0:
+                    territoryRenderer.material = enemyTerritoryMaterial;
+                    break;
+                case 1:
+                    territoryRenderer.material = almostTerritoryMaterial;
+                    break;
+                case 2:
+                    territoryRenderer.material = myTerritoryMaterial;
+                    break;
+                default:
+                    interactionCount1 = 0;
+                    break;
+            }
+                break;
+            case 2:
+            switch (interactionCount2)
+            {
+                case 0:
+                    territoryRenderer.material = enemyTerritoryMaterial;
+                    break;
+                case 1:
+                    territoryRenderer.material = almostTerritoryMaterial;
+                    break;
+                case 2:
+                    territoryRenderer.material = myTerritoryMaterial;
+                    break;
+                default:
+                    interactionCount2 = 0;
+                    break;
+            }
+                break;
+
+
+            case 3:
+            switch (interactionCount3)
+            {
+                case 0:
+                    territoryRenderer.material = enemyTerritoryMaterial;
+                    break;
+                case 1:
+                    territoryRenderer.material = almostTerritoryMaterial;
+                    break;
+                case 2:
+                    territoryRenderer.material = myTerritoryMaterial;
+                    break;
+                default:
+                    interactionCount3 = 0;
+                    break;
+            }
+                break;
+        }
+    }
+
+    private void UpdateMinimap()
+    {
+        // Iterate through all enemy territories
+        for (int i = 0; i < enemyTerritories.Length; i++)
+        {
+            Renderer territoryRenderer = enemyTerritories[i].GetComponent<Renderer>();
+
+            // Set the enemy territory material for territories that have not been interacted with
+            if (i >= interactionCount)
+            {
+                territoryRenderer.material = enemyTerritoryMaterial;
+            }
+        }
+    } 
+    public void THEendGame()
+    {
+        if (interactionCount == 2 && interactionCount1 == 2 && interactionCount2 == 2 && interactionCount3 == 2)
+        {
+            //eind screen
+        }
     }
 }
+

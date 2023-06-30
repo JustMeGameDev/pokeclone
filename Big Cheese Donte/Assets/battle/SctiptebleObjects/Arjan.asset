@@ -9,8 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee0428580c0b1b4fbb13f889df2b0f0, type: 3}
-  m_Name: teamMembers
+  m_Script: {fileID: 11500000, guid: d0848a41fc1bbbd4cb9c73c9531d4eb5, type: 3}
+  m_Name: Arjan
   m_EditorClassIdentifier: 
-  Array: []
-  Standing: {fileID: 11400000, guid: 0cb83e6ae30abcb429ab5d1a2d6a2c68, type: 2}
+  Name: 'arjan '
+  HP: 100
+  MaxHP: 100
+  XP: 0
+  MaxXP: 0
+  Level: 10
+  Defense: 17
+  Damage: 12
+  Type: de knuppel man
+  image: {fileID: 21300000, guid: c860a11d0bcbb3a46b2e548d4839a83a, type: 3}
