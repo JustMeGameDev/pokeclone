@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Territory : MonoBehaviour
 {
@@ -146,7 +147,7 @@ public class Territory : MonoBehaviour
     {
         if (interactionCount == 2 && interactionCount1 == 2 && interactionCount2 == 2 && interactionCount3 == 2)
         {
-            //eind screen
+            SceneManager.LoadScene("end");
         }
     }
 }
