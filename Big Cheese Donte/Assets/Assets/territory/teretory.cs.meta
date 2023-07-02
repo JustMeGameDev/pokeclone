@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4152969e0a1a5414d9f5dac073fe9189
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyTerritoryMaterial: {fileID: 2100000, guid: 9159e2580b8a0d243b202015de22d243,
+      type: 2}
+  - almostTerritoryMaterial: {fileID: 2100000, guid: 0b2089d9b32047b45b8a24b60d280648,
+      type: 2}
+  - myTerritoryMaterial: {fileID: 2100000, guid: b8d6823a89145c643af8d1ef29404948,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
